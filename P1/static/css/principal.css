@@ -1,0 +1,45 @@
+/*Principal*/
+/*Para marcar bordes-> border: 1px solid red;*/
+
+body{
+    background-color: beige;
+}
+
+.header{
+    width: 100%;
+    height: auto; 
+}
+
+.container-logo{
+    display: inline;
+    float: left;
+    width: 25%;
+    height: auto;
+}
+
+.logo{
+    width: 100%;
+    height: auto;
+}
+
+.container-title-menu{
+    display: inline;
+    float: right;
+    width: 75%;
+    height: auto;
+}
+
+.title{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu{
+    width: 100%;
+    height: auto;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
