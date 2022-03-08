@@ -33,7 +33,7 @@ body{
     height: auto;
 }
 
-.title{
+h1{
     width: 100%;
     height: auto;
     border: 1px solid black;
@@ -46,4 +46,28 @@ body{
     height: auto;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.productos{
+    display: inline;
+    width: 70%;
+    height: auto;
+}
+
+.zurrapa{
+    display: inline;
+    width: 27.5%;
+    height: auto;
+}
+
+.chorizo{
+    display: inline;
+    width: 27.5%;
+    height: auto;
+}
+
+.morcilla{
+    display: inline;
+    width: 27.5%;
+    height: auto;
 }
