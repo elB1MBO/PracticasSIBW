@@ -4,21 +4,20 @@
 /* h1{ h1 es header 1, esta tambien h2, etc.
     display: inline;
 } */
-ul{
-
-}
 ul li{
     list-style: none;
     display: inline-block;
     margin-left: 1.5%;
     margin-right: 1.5%;
 }
+ul li:hover{
+    background-color: rgba(59, 8, 8, 0.5);
+}
 ul li a{ /*Para cambiar solo la a en el li del ul*/
     /*Para que no subraye ni cambie de color los links*/
     text-decoration: none; 
     color: white;
 }
-
 /*p*/
 p{
     font-family: Arial, Helvetica, sans-serif;
@@ -100,6 +99,9 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+h3{
+    font-size: small;
+}
 /*Menu*/
 .menu{
     width: 100%;
@@ -167,10 +169,14 @@ input[type=checkbox]:checked + aside {
     width: 27.5%;
     align-content: center;
 }
+
 /*Definir altura y ancho de todas las imagenes de la galeria*/
 .galeria img{
     width: 100%;
     height: auto;
+}
+.galeria img:hover{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 }
 /*Descripcion de las imagenes*/
 .desc{

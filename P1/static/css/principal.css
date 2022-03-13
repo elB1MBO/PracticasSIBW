@@ -1,53 +1,188 @@
 /*Principal*/
 /*Para marcar bordes-> border: 1px solid red;*/
 
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+ul li a{ /*Para cambiar solo la a en el li del ul*/
+    /*Para que no subraye ni cambie de color los links*/
+    text-decoration: none; 
+    color: white;
+}
+
+/*p*/
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/*Cuerpo*/
 body{
-    background-color: beige;
+    /*Fondo:*/
+    background-repeat: no-repeat;
+    background-image: url(https://latradiciondearriate.com/wp-content/uploads/2019/01/fondo-home-1.jpg);
+    background-size: cover;
+    background-position: center, center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: inherit;
 }
 
+/*Cabecera*/
 .header{
+    height: 18%;
     width: 100%;
-    height: auto; 
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0%;
+    box-sizing: border-box;
 
+    background-color: rgba(150, 18, 18, 0.8);
+    
+    transition: 0.5s;
+}
+/*Contenedor logo*/
 .container-logo{
+    width: 20%;
+    height: 100%;
     display: inline;
+
     float: left;
-    width: 25%;
-    height: auto;
+    padding-left: 2.5%;
+    align-items: center;
 }
-
+/*Logo*/
 .logo{
-    width: 100%;
+    width: auto;
     height: auto;
+    max-height: 100%;
+    display: block;
+    object-fit: fill;
+    margin-left: 30%;
 }
 
+/*Contenedor titulo y menu*/
 .container-title-menu{
     display: inline;
     float: right;
     width: 75%;
     height: auto;
+    text-align: center;
 }
-
-.title{
+/*Ttulo*/
+h1{
     width: 100%;
     height: auto;
-    border: 1px solid black;
+    margin-top: 2.5%;
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 5px;
 }
-
+/*Subtitulo*/
+h2{
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+/*Menu*/
 .menu{
     width: 100%;
     height: auto;
+
+    cursor: pointer;
+    transition: 0.5s;
+
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-h1{
-    font-family: Arial, Helvetica, sans-serif;
+/*Informacion*/
+.inicio{
+    cursor: pointer;
+    transition: 0.5s;
 }
 
-h2{
+/*Panel auxiliar desplegable*/
+label[for="toggle"] {
+    font-size: 3rem;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+input[type="checkbox"] {
+    position: absolute;
+    top: -100px;
+}
+
+aside {
     font-family: Arial, Helvetica, sans-serif;
+
+    background-color: rgba(168, 60, 60, 0.75);
+    color: white;
+  
+    width: 340px;
+    height: 100%;
+    padding: 0 20px;
+  
+    position: fixed;
+    top: 0;
+    right: -370px;
+  
+    transition: 0.6s all;
+}
+/*Para que reciba el input y apra la pestaña auxiliar*/
+input[type=checkbox]:checked + aside {
+    right: 0px;
+}
+/*Texto principal*/
+.maintext{
+    width: 67.5%;
+    height: auto;
+    margin-left: 30%;
+    margin-right: 0%;
+    margin-top: 10%;
+    background-color: beige;
+    position: inherit;
+}
+/*El h1 y h2 del texto principal son distintos del titulo*/
+.maintext h1{
+    color: black;
+}
+.maintext h2{
+    color: black;
+}
+/*Imagenes*/
+.container-imagenes{
+    position: inherit;
+    display: block;
+    margin-top: -10%;
+}
+/*Pie de pagina*/
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    text-align: center;
+
+    color: white;
+    background-color: rgba(150, 18, 18, 0.8);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7%;
+
 }

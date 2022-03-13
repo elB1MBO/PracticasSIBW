@@ -1,26 +1,56 @@
 <html>
-    <head>
+
+<head>
         <!--Head-->
         <link rel="stylesheet" href="static/css/principal.css">
-    </head>
-    <body><!--Bloque cabecera de portada-->
-        <div class="header">
-            <div class="container-logo">
-                <img class="logo" src="static/image/Terroba.jpg"/>
-            </div>
-            <div class="container-title-menu">
-                <div class="title">
-                    <span>Página principal</span>
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li>
-                            <a href="portada.html">Portada</a>
-                        </li>
-                    </ul>
-                </div>
+</head>
+
+<body><!--Bloque cabecera de portada-->
+            <!--Header-->
+    <div class="header">
+        
+        <!--Logo-->
+        <div class="container-logo">
+            <img class="logo" src="static/image/logoArriate.png"/>
+        </div>
+        
+        <!--Menu-->
+        <div class="container-title-menu">
+            <h1>La Tienda de Arriate</h1>
+            <h2>Descubre la gastronomía de Arriate y otros lugares de la Serranía de Ronda</h2>
+            <div class="menu">
+                <ul>
+                    <li class="incio">
+                        <a href="portada.html">Inicio</a>
+                    </li>
+                    <li class="Sobre nosotros">
+                        <a href="principal.html">Sobre nosotros</a>   <!--# se pone porque no tenemos un enlace, para que este por defecto--> 
+                    </li>
+                    <li class="Contacto">
+                        <a href="#">Contacto</a>
+                    </li>
+                </ul>
             </div>
         </div>
+        
+        <!--Panel auxiliar "?"-->
+        <label for="toggle">❔</label>
+        <input type="checkbox" id="toggle">
+        <aside>
+        <h2>Información</h2>
+
+        <p>Profundiza en nuestras raíces:</p>
+
+        <ol>
+            <li><a href="https://goo.gl/maps/Z1EhEzPywQRXK1YV6" target="_blank" style="color: white; font-style: italic;">Dónde estamos</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Arriate_(M%C3%A1laga)" target="_blank" style="color: white; font-style: italic;">Descubre más sobre Arriate</a>.</li>
+            <li><a href="https://es.wikipedia.org/wiki/Ronda" target="_blank" style="color: white; 
+            font-style: italic;">Descubre más sobre Ronda y la Serranía</a>.</li>
+        </ol>
+
+    </aside>
+    </div>
+    <div class="maintext">
         <h1>¿Quiénes somos?</h1>
         <h2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -30,6 +60,27 @@
             Congue eu consequat ac felis donec et odio pellentesque. Condimentum lacinia quis vel eros donec ac. Eget lorem dolor sed viverra ipsum 
             nunc aliquet.
         </h2>
+    </div>
+    <div class="container-imagenes">
         <img class="saborMalaga" src="static/image/sabor a malaga.jpg"/>
-    </body>
+    </div>
+</body>
+
+<!--Pie de pagina--> 
+<footer>
+        <!-- <img src="static/image/twitterIcon.jpg" alt="" class="logo-ugr">
+        <div class="container-iconos-sociales">
+            <a href="" class="icono-social"></a>
+            <a href="" class="icono-social"></a>
+            <a href="" class="icono-social"></a>
+            <a href="" class="icono-social"></a>
+        </div>
+        <ul class="container-footer-menu">
+            <li class="menu-item">Legal</li>
+            <li class="menu-item">Cookies</li>
+            <li class="menu-item">Privacidad</li>
+        </ul> -->
+        <p>&copy;2022 Raúl Durán Racero. Todos los derechos reservados.</p>
+</footer>
+
 </html>
