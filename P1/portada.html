@@ -10,12 +10,12 @@
     <div class="header">
         <!--Logo-->
         <div class="container-logo">
-            <img class="logo" src="static/image/logoArriate.png"/>
+            <a href="static/image/logoArriate.png" target="_blank" alt="Logo"><img class="logo" src="static/image/logoArriate.png"/></a>
         </div>
         <!--Menu-->
         <div class="container-title-menu">
             <h1>La Tienda de Arriate</h1>
-            <h2>Descubre la gastronomía de Arriate y otros lugares de la Serranía de Ronda</h2>
+            <h2>Descubre la gastronomia de Arriate y otros lugares de la Serrania de Ronda</h2>
             <div class="menu">
                 <ul>
                     <li class="incio">
@@ -24,30 +24,32 @@
                     <li class="Sobre nosotros">
                         <a href="principal.html">Sobre nosotros</a>   <!--# se pone porque no tenemos un enlace, para que este por defecto--> 
                     </li>
-                    <li class="Contacto">
-                        <a href="#">Contacto</a>
+                    <li class="Imprimir">
+                        <a href="#">Imprimir</a>
                     </li>
                 </ul>
             </div>
         </div>
+        <label for="toggle">❔</label>
+        <input type="checkbox" id="toggle">
+        <aside>
+            <h2>Información</h2>
+            <h3>IMPORTANTE: El único producto disponible por ahora es la Mistela Arriate</h3>
+            <p>Profundiza en nuestras raíces:</p>
+            <!--Cambiar y poner el color y fuente en el css-->
+            <ol>
+                <li><a href="https://goo.gl/maps/Z1EhEzPywQRXK1YV6" target="_blank" style="color: white; font-style: italic;">Dónde estamos</a></li>
+                <li><a href="https://es.wikipedia.org/wiki/Arriate_(M%C3%A1laga)" target="_blank" style="color: white; font-style: italic;">Descubre más sobre Arriate</a>.</li>
+                <li><a href="https://es.wikipedia.org/wiki/Ronda" target="_blank" style="color: white; 
+                font-style: italic;">Descubre más sobre Ronda y la Serranía</a>.</li>
+            </ol>
+    
+        </aside>
     </div>
 
     <!--Panel auxiliar "?"-->
-    <label for="toggle">❔</label>
-    <input type="checkbox" id="toggle">
-    <aside>
-        <h2>Información</h2>
-        <h3>IMPORTANTE: El único producto disponible por ahora es la Mistela Arriate</h3>
-        <p>Profundiza en nuestras raíces:</p>
-
-        <ol>
-            <li><a href="https://goo.gl/maps/Z1EhEzPywQRXK1YV6" target="_blank" style="color: white; font-style: italic;">Dónde estamos</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Arriate_(M%C3%A1laga)" target="_blank" style="color: white; font-style: italic;">Descubre más sobre Arriate</a>.</li>
-            <li><a href="https://es.wikipedia.org/wiki/Ronda" target="_blank" style="color: white; 
-            font-style: italic;">Descubre más sobre Ronda y la Serranía</a>.</li>
-        </ol>
-
-    </aside>
+    
+    
 
     <!--Tabla de contenidos-->
     <div class="container-imgs">
@@ -68,6 +70,14 @@
                 <div class="desc">Morcilla de Embutidos Melgar</div>
         </div>
         <div class="galeria">
+            <img src="static/image/zurrapa colora icarben.png">
+                <div class="desc">Zurrapa "colorá" de Icarben</div>
+        </div>
+        <div class="galeria">
+            <img src="static/image/zurrapa-higado.png">
+                <div class="desc">Zurrapa de higado</div>
+        </div>
+        <div class="galeria">
             <img src="static/image/yemas del tajo.png">
                 <div class="desc">Yemas del tajo</div>
         </div>
@@ -76,16 +86,8 @@
                 <div class="desc">Rosco de vino</div>
         </div>
         <div class="galeria">
-            <img src="static/image/zurrapa colora.png">
-                <div class="desc">Zurrapa "colorá" de Embutidos Melgar</div>
-        </div>
-        <div class="galeria">
-            <img src="static/image/mistela.png">
-                <div class="desc">Mistela arriate</div>
-        </div>
-        <div class="galeria">
-            <img src="static/image/mistela.png">
-                <div class="desc">Mistela arriate</div>
+            <img src="static/image/pestinos.png">
+                <div class="desc">Pestiños</div>
         </div>
     </div>
 
@@ -95,19 +97,18 @@
 <!--Pie de página-->
 
 <footer>
-    <!-- <img src="static/image/twitterIcon.jpg" alt="" class="logo-ugr">
-    <div class="container-iconos-sociales">
-        <a href="" class="icono-social"></a>
-        <a href="" class="icono-social"></a>
-        <a href="" class="icono-social"></a>
-        <a href="" class="icono-social"></a>
+    <div class="footer-text-left">
+        <p class="copyright">&copy;2022 Raúl Durán Racero. Todos los derechos reservados.</p>
     </div>
-    <ul class="container-footer-menu">
-        <li class="menu-item">Legal</li>
-        <li class="menu-item">Cookies</li>
-        <li class="menu-item">Privacidad</li>
-    </ul> -->
-    <p>&copy;2022 Raúl Durán Racero. Todos los derechos reservados.</p>
+
+    <div class="footer-content-right">
+        <ul>
+            <li><a href="https://twitter.com/RalDurn8" target="_blank"><img src="static/image/twitter.jpeg" class="icon-style" alt="Twitter icon"></a></li>
+            <li><a href="https://github.com/elB1MBO" target="_blank"><img src="static/image/github.jpeg" class="icon-style" alt="Github icon"></a></li>
+            <li><a href="https://pradogrado2122.ugr.es/" target="_blank"><img src="static/image/email.jpeg" class="icon-style" alt="Email icon"></a></li>
+        </ul>
+    </div>
+
 </footer>
 
 </html>

@@ -1,16 +1,24 @@
+/*Unordered list*/
+ul{
+    width: 100%;
+    height: 30%;
+    margin: 0;
+}
 ul li{
     list-style: none;
     display: inline-block;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
+    
+    padding: 10px 60px;
+}
+ul li:hover{
+    background-color: rgba(131, 23, 23, 0.5);
+    border-radius: 10px;
 }
 ul li a{ /*Para cambiar solo la a en el li del ul*/
-    /*Para que no subraye ni cambie de color los links*/
-    text-decoration: none; 
+    text-decoration: none; /*Para que no subraye ni cambie de color los links*/
     color: white;
 }
-
-/*p*/
+/*Parrafo*/
 p{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -75,11 +83,20 @@ body{
     height: auto;
     text-align: center;
 }
+/*COntenedores titulo y subtitulo*/
+.container-title-menu h1{
+    height: 20%;
+}
+.container-title-menu h2{
+    height: 20%;
+    margin-bottom: 0%;
+}
 /*Ttulo*/
 h1{
     width: 100%;
     height: auto;
-    margin-top: 2.5%;
+    margin-top: auto;
+    margin-bottom: auto;
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -93,6 +110,7 @@ h2{
 }
 h3{
     font-size: small;
+    margin-right: 3%;
 }
 /*Menu*/
 .menu{
@@ -105,11 +123,6 @@ h3{
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
 }
-/*Informacion*/
-.inicio{
-    cursor: pointer;
-    transition: 0.5s;
-}
 
 /*Panel auxiliar desplegable*/
 label[for="toggle"] {
@@ -119,13 +132,11 @@ label[for="toggle"] {
     right: 5px;
     z-index: 1;
     cursor: pointer;
-  }
-  
+  } 
 input[type="checkbox"] {
     position: absolute;
     top: -100px;
 }
-
 aside {
     font-family: Arial, Helvetica, sans-serif;
 
@@ -142,13 +153,18 @@ aside {
   
     transition: 0.6s all;
 }
-/*Para que reciba el input y apra la pestaña auxiliar*/
 input[type=checkbox]:checked + aside {
     right: 0px;
 }
+/*Contenedor imagenes*/
+.container-imagenes{
+    width: 40%;
+    height: 60%;
 
-.imagen-mistela{
+    margin-top: 10%;
     float: right;
+}
+.imagen-mistela{
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 10%;
@@ -156,19 +172,22 @@ input[type=checkbox]:checked + aside {
 .parrafo-principal{
     background-color: beige;
     margin-top: 8%;
+    margin-right: 40%;
     position: absolute;
     display: fixed;
 }
 .parrafo-principal p{
     color: black;
 }
-
+/*Destacar palabras importantes con span*/
+.critical-words{
+    font-weight: bold;
+}
 
 /*Pie de pagina*/
 footer{
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
-    text-align: center;
 
     color: white;
     background-color: rgba(150, 18, 18, 0.8);
@@ -178,6 +197,29 @@ footer{
     left: 0;
 
     width: 100%;
-    height: 7%;
+    height: 6.5%;
 
+}
+.footer-text-left{
+    width: 40%;
+    margin-left: 2%;
+    float: left;
+}
+.footer-content-right{
+    width: 40%;
+    margin-right: 2%;
+    float: right;
+}
+.footer-content-right ul li{
+    padding-top: 1.5%;
+}
+
+.icon-style{
+    height: 20px;
+    width: 20px;
+    margin-left: 2%;
+    margin-top: 10%;
+}
+.icon-style:hover{
+    background-color: rgba(131, 23, 23, 0.5);
 }
