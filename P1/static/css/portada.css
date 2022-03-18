@@ -5,7 +5,11 @@
     font-family: Cremona;
     src: url(../font/Cremona\ Regular\ TTF.ttf);
 }
-
+/* el caracter "*" sirve para establecerlo en todo el archivo*/
+*{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 /*Para marcar bordes-> border: 1px solid red;*/
 
 /* h1{ h1 es header 1, esta tambien h2, etc.
@@ -29,12 +33,10 @@ ul li:hover{
 ul li a{ /*Para cambiar solo la a en el li del ul*/
     /*Para que no subraye ni cambie de color los links*/
     text-decoration: none; 
-    color: white;
 }
 /*p*/
 p{
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
 }
 
 /*Cuerpo*/
@@ -98,6 +100,7 @@ body{
 }
 .container-title-menu h1{
     height: 20%;
+    font-family: Cremona;
 }
 .container-title-menu h2{
     height: 20%;
@@ -110,19 +113,14 @@ h1{
     margin-top: auto;
     margin-bottom: auto;
     font-size: x-large;
-    font-family: Cremona;
-    color: white;
     padding: 5px;
 }
 /*Subtitulo*/
 h2{
     font-size: medium;
-    font-family: Cremona;
-    color: white;
 }
 h3{
     font-size: small;
-    margin-right: 3%;
 }
 /*Menu*/
 .menu{
@@ -162,18 +160,27 @@ aside {
     font-family: Arial, Helvetica, sans-serif;
 
     background-color: rgba(168, 60, 60, 0.75);
-    color: white;
   
-    width: 340px;
+    width: 20%;
     height: 100%;
     padding: 0 20px;
   
     position: fixed;
     top: 0;
-    right: -370px;
+    right: -30%;
   
     transition: 0.6s all;
 }
+aside h2{
+    height: auto;
+    margin-left: 5%;
+}
+/*Diseño de las secciones de la lista ol*/
+aside ol li a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
 /*Para que reciba el input y abra la pestaña auxiliar*/
 input[type=checkbox]:checked + aside {
     right: 0px;
@@ -216,7 +223,6 @@ footer{
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
 
-    color: white;
     background-color: rgba(150, 18, 18, 0.8);
 
     position: fixed;

@@ -1,0 +1,242 @@
+/*Producto*/
+/*Fuente*/
+/* @font-face {
+    font-family: Cremona;
+    src: url(../font/Cremona\ Regular\ TTF.ttf);
+} */
+
+*{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Unordered list*/
+ul{
+    width: 100%;
+    height: 30%;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    
+    padding: 10px 60px;
+}
+ul li a{ /*Para cambiar solo la a en el li del ul*/
+    text-decoration: none; /*Para que no subraye ni cambie de color los links*/
+}
+
+/*Cuerpo*/
+body{
+    /*Sin fondo*/
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: inherit;
+}
+
+/*Cabecera*/
+.header{
+    height: 18%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0%;
+    box-sizing: border-box;
+
+    /* background-color: rgba(150, 18, 18, 0.8); */
+    
+    transition: 0.5s;
+}
+/*Contenedor logo*/
+.container-logo{
+    width: 20%;
+    height: 100%;
+    display: inline;
+    position: relative;
+    float:right;
+    padding-left: 2.5%;
+    align-items: center;
+}
+/*Logo*/
+.logo{
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    display: block;
+    object-fit: fill;
+    margin-left: 30%;
+}
+
+/*Contenedor titulo y menu*/
+.container-title-menu{
+    display: inline;
+    float: left;
+    position: relative;
+    width: 75%;
+    height: auto;
+    text-align: left;
+}
+/*Contenedores titulo y subtitulo*/
+.container-title-menu h1{
+    height: 20%;
+}
+.container-title-menu h2{
+    height: 20%;
+    margin-bottom: 0%;
+}
+/*Ttulo*/
+h1{
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: x-large;
+    /* font-family: Cremona; */
+    padding: 5px;
+}
+/*Subtitulo*/
+h2{
+    font-size: medium;
+}
+h3{
+    font-size: small;
+    margin-right: 3%;
+}
+/*Menu*/
+.menu{
+    visibility: hidden;
+
+    width: 100%;
+    height: auto;
+
+    cursor: pointer;
+    transition: 0.5s;
+
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Panel auxiliar desplegable*/
+label[for="toggle"] {
+    visibility: hidden;
+
+    font-size: 3rem;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    z-index: 1;
+    cursor: pointer;
+  } 
+input[type="checkbox"] {
+    position: absolute;
+    top: -100px;
+}
+aside {
+    visibility: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: rgba(168, 60, 60, 0.75);
+    color: white;
+  
+    width: 20%;
+    height: 100%;
+    padding: 0 20px;
+  
+    position: fixed;
+    top: 0;
+    right: -30%;
+  
+    transition: 0.6s all;
+}
+input[type=checkbox]:checked + aside {
+    right: 0px;
+}
+/*Contenedor imagenes*/
+.container-imagenes{
+    width: 40%;
+    height: 60%;
+    margin-top: 10%;
+    float: right;
+    position: inherit;
+}
+.imagen-mistela{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.fondo-texto{
+    margin-top: 10%;
+    margin-left: 2%;
+    position: fixed;
+    width: 60%;
+    height: 50%;
+}
+.container-nombre-precio{
+    margin-top: 1%;
+    margin-left: 1%;
+    position: fixed;
+}
+/*Si hago .container-nombre-precio h1, h2, se cambian todos los h2 de color*/
+.container-nombre-precio h1{
+    color: black;
+}
+.container-nombre-precio h2{
+    color: black;
+}
+.parrafo-principal{
+    text-align: left;
+    margin-right: 40%;
+    margin-left: 1%;
+    position: fixed;
+    display:block;
+}
+
+/*Destacar palabras importantes con span*/
+.critical-words{
+    font-weight: bold;
+}
+
+/*Pie de pagina*/
+footer{
+    font-size: large;
+
+    /* background-color: rgba(150, 18, 18, 0.8); */
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7%;
+
+}
+.footer-text-left{
+    width: 40%;
+    margin-left: 2%;
+    float: left;
+}
+.footer-content-right{
+    visibility: hidden;
+    
+    width: 40%;
+    margin-right: 2%;
+    float: right;
+}
+.footer-content-right ul li{
+    padding-top: 1.5%;
+}
+
+/* .icon-style{
+    height: 20px;
+    width: 20px;
+    margin-left: 2%;
+    margin-top: 10%;
+}
+.icon-style:hover{
+    background-color: rgba(131, 23, 23, 0.5);
+} */

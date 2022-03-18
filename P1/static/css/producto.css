@@ -1,3 +1,15 @@
+/*Producto*/
+/*Fuente*/
+@font-face {
+    font-family: Cremona;
+    src: url(../font/Cremona\ Regular\ TTF.ttf);
+}
+
+*{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /*Unordered list*/
 ul{
     width: 100%;
@@ -16,11 +28,6 @@ ul li:hover{
 }
 ul li a{ /*Para cambiar solo la a en el li del ul*/
     text-decoration: none; /*Para que no subraye ni cambie de color los links*/
-    color: white;
-}
-/*Parrafo*/
-p{
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
@@ -98,15 +105,12 @@ h1{
     margin-top: auto;
     margin-bottom: auto;
     font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    font-family: Cremona;
     padding: 5px;
 }
 /*Subtitulo*/
 h2{
     font-size: medium;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
 }
 h3{
     font-size: small;
@@ -143,13 +147,13 @@ aside {
     background-color: rgba(168, 60, 60, 0.75);
     color: white;
   
-    width: 340px;
+    width: 20%;
     height: 100%;
     padding: 0 20px;
   
     position: fixed;
     top: 0;
-    right: -370px;
+    right: -30%;
   
     transition: 0.6s all;
 }
@@ -160,21 +164,41 @@ input[type=checkbox]:checked + aside {
 .container-imagenes{
     width: 40%;
     height: 60%;
-
     margin-top: 10%;
     float: right;
+    position: inherit;
 }
 .imagen-mistela{
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 10%;
 }
-.parrafo-principal{
+.fondo-texto{
     background-color: beige;
-    margin-top: 8%;
+    margin-top: 10%;
+    margin-left: 2%;
+    position: fixed;
+    width: 60%;
+    height: 50%;
+}
+.container-nombre-precio{
+    margin-top: 1%;
+    margin-left: 1%;
+    position: fixed;
+}
+/*Si hago .container-nombre-precio h1, h2, se cambian todos los h2 de color*/
+
+.parrafo-principal{
     margin-right: 40%;
-    position: absolute;
+    margin-top: 1%;
+    margin-left: 1%;
+    position: fixed;
     display: fixed;
+}
+.parrafo-principal h1{
+    color: black;
+}
+.parrafo-principal h2{
+    color: black;
 }
 .parrafo-principal p{
     color: black;
@@ -182,6 +206,7 @@ input[type=checkbox]:checked + aside {
 /*Destacar palabras importantes con span*/
 .critical-words{
     font-weight: bold;
+    color: black;
 }
 
 /*Pie de pagina*/
