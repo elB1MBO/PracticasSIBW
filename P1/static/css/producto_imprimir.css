@@ -1,16 +1,31 @@
-/*Producto*/
-/*Fuente*/
-/* @font-face {
+/*Mistela*/
+/*Fuente de google para texto*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/*Fuente para titulo*/
+@font-face {
     font-family: Cremona;
     src: url(../font/Cremona\ Regular\ TTF.ttf);
-} */
-
-*{
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
+}
+/*para que sea responsive*/
+@media screen and (max-width:800px) {
+    foorer{
+        width: 100%;
+        grid-template-columns: repeat((1,1fr));
+        grid-gap: 1px;
+    }
 }
 
-/*Unordered list*/
+/* el caracter "*" sirve para establecerlo en todo el archivo*/
+*{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+/*Para marcar bordes-> border: 1px solid red;*/
+
+/* h1{ h1 es header 1, esta tambien h2, etc.
+    display: inline;
+} */
 ul{
     width: 100%;
     height: 30%;
@@ -22,8 +37,13 @@ ul li{
     
     padding: 10px 60px;
 }
+ul li:hover{
+    background-color: rgba(131, 23, 23, 0.5);
+    border-radius: 10px;
+}
 ul li a{ /*Para cambiar solo la a en el li del ul*/
-    text-decoration: none; /*Para que no subraye ni cambie de color los links*/
+    /*Para que no subraye ni cambie de color los links*/
+    text-decoration: none; 
 }
 
 /*Cuerpo*/
@@ -32,16 +52,16 @@ body{
     width: 100%;
     height: 100%;
     opacity: 1;
-    visibility: inherit;
+
 }
 
 /*Cabecera*/
 .header{
-    height: 18%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 20%;
+    width: 110%;
+    position: relative;
+    top: -1%;
+    left: -1%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,8 +77,8 @@ body{
     width: 20%;
     height: 100%;
     display: inline;
-    position: relative;
-    float:right;
+
+    float: right;
     padding-left: 2.5%;
     align-items: center;
 }
@@ -76,14 +96,13 @@ body{
 .container-title-menu{
     display: inline;
     float: left;
-    position: relative;
-    width: 75%;
+    width: 90%;
     height: auto;
-    text-align: left;
+    text-align: center;
 }
-/*Contenedores titulo y subtitulo*/
 .container-title-menu h1{
     height: 20%;
+    font-family: Cremona;
 }
 .container-title-menu h2{
     height: 20%;
@@ -96,7 +115,6 @@ h1{
     margin-top: auto;
     margin-bottom: auto;
     font-size: x-large;
-    /* font-family: Cremona; */
     padding: 5px;
 }
 /*Subtitulo*/
@@ -105,7 +123,6 @@ h2{
 }
 h3{
     font-size: small;
-    margin-right: 3%;
 }
 /*Menu*/
 .menu{
@@ -120,29 +137,36 @@ h3{
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
 }
+/*Informacion*/
+.inicio{
+    cursor: pointer;
+    transition: 0.5s;
+}
 
 /*Panel auxiliar desplegable*/
 label[for="toggle"] {
     visibility: hidden;
-
+    
     font-size: 3rem;
     position: absolute;
     top: 4px;
     right: 5px;
     z-index: 1;
     cursor: pointer;
-  } 
+    display: flex;
+  }
+  
 input[type="checkbox"] {
     position: absolute;
     top: -100px;
+    display: flex;
 }
+
 aside {
+
     visibility: hidden;
 
-    font-family: Arial, Helvetica, sans-serif;
-
     background-color: rgba(168, 60, 60, 0.75);
-    color: white;
   
     width: 20%;
     height: 100%;
@@ -154,52 +178,73 @@ aside {
   
     transition: 0.6s all;
 }
+aside h2{
+    height: auto;
+    margin-left: 5%;
+}
+/*Diseño de las secciones de la lista ol*/
+aside ol li a{
+    font-style: italic;
+}
+
+/*Para que reciba el input y abra la pestaña auxiliar*/
 input[type=checkbox]:checked + aside {
     right: 0px;
 }
-/*Contenedor imagenes*/
-.container-imagenes{
-    width: 40%;
-    height: 60%;
-    margin-top: 10%;
-    float: right;
-    position: inherit;
+
+/*contenedor-principal*/
+.contenedor-principal{
+    display: grid;
+    grid-gap: 1rem;
+    margin: 2% 5%;
+    grid-auto-rows: minmax(100px, auto);
+    /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+    grid-template-columns: repeat(2, minmax(min(100%,25rem), 1fr));
 }
-.imagen-mistela{
-    margin-left: 5%;
-    margin-right: 5%;
+/*Para ajustar el grid de las imagenes cuando se reduce la pantalla por debajo de 80 rem (aprox. 1300px)*/
+@media screen and (max-width: 80rem) {
+    .contenedor-principal{
+        display: grid;
+        grid-gap: 1rem;
+        grid-auto-rows: minmax(100px, auto);
+        /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+        grid-template-columns: repeat(auto-fill, minmax(min(100%,25rem), 1fr));
+    }
 }
-.fondo-texto{
-    margin-top: 10%;
-    margin-left: 2%;
-    position: fixed;
-    width: 60%;
-    height: 50%;
+
+/*Texto principal*/
+.informacion a{
+    text-decoration: underline;
+    font-weight: bold;
 }
-.container-nombre-precio{
-    margin-top: 1%;
-    margin-left: 1%;
-    position: fixed;
+
+/*Imagenes*/
+.imagenes{
+    display: grid;
+    grid-gap: 1rem;
+    margin: 2% 5%;
+    /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+    grid-template-rows: repeat(2, minmax(min(100%,25rem), 1fr));
 }
-/*Si hago .container-nombre-precio h1, h2, se cambian todos los h2 de color*/
-.container-nombre-precio h1{
-    color: black;
+/*Para ajustar el grid de las imagenes cuando se reduce la pantalla por debajo de 80 rem (aprox. 1300px)*/
+@media screen and (max-width: 80rem) {
+    .imagenes{
+        display: grid;
+        grid-gap: 1rem;
+        /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+        grid-template-rows: repeat(auto-fill, minmax(min(100%,25rem), 1fr));
+    }
 }
-.container-nombre-precio h2{
-    color: black;
-}
-.parrafo-principal{
-    text-align: left;
-    margin-right: 40%;
-    margin-left: 1%;
-    position: fixed;
-    display:block;
-}
+
+
+
 
 /*Destacar palabras importantes con span*/
 .critical-words{
     font-weight: bold;
+    color: black;
 }
+
 
 /*Pie de pagina*/
 footer{
@@ -207,36 +252,29 @@ footer{
 
     /* background-color: rgba(150, 18, 18, 0.8); */
 
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative;
+    left: -1%;
 
-    width: 100%;
-    height: 7%;
+    width: 110%;
+    height: 10%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.footer-text-left{
+.footer-contenedor-texto{
     width: 40%;
     margin-left: 2%;
     float: left;
 }
-.footer-content-right{
+.footer-contenedor-iconos{
     visibility: hidden;
-    
+
     width: 40%;
-    margin-right: 2%;
     float: right;
-}
-.footer-content-right ul li{
-    padding-top: 1.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* .icon-style{
-    height: 20px;
-    width: 20px;
-    margin-left: 2%;
-    margin-top: 10%;
-}
-.icon-style:hover{
-    background-color: rgba(131, 23, 23, 0.5);
-} */

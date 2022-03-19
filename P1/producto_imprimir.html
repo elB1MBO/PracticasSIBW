@@ -11,7 +11,7 @@
     <div class="header">
         <!--Logo-->
         <div class="container-logo">
-            <img class="logo" src="static/image/logoArriate.png" />
+            <a href="static/image/logoArriate.png" target="_blank" alt="Logo"><img class="logo" src="static/image/logoArriate.png"/></a>
         </div>
         <!--Menu-->
         <div class="container-title-menu">
@@ -23,7 +23,7 @@
                         <a href="portada.html">Inicio</a>
                     </li>
                     <li class="Sobre nosotros">
-                        <a href="principal.html">Sobre nosotros</a>
+                        <a href="principal.html">Sobre nosotros</a>   <!--# se pone porque no tenemos un enlace, para que este por defecto--> 
                     </li>
                     <li class="Imprimir">
                         <a href="producto_imprimir.html">Imprimir</a>
@@ -31,40 +31,31 @@
                 </ul>
             </div>
         </div>
-        <label for="toggle">></label>
-        <input type="checkbox" id="toggle">
-        <aside>
-            <h2>Información</h2>
-            <h3>IMPORTANTE: El único producto disponible por ahora es la Mistela Arriate</h3>
-            <p>Profundiza en nuestras raíces:</p>
-            <!--Cambiar y poner el color y fuente en el css-->
-            <ol>
-                <li><a href="https://goo.gl/maps/Z1EhEzPywQRXK1YV6" target="_blank"
-                        style="color: white; font-style: italic;">Dónde estamos</a></li>
-                <li><a href="https://es.wikipedia.org/wiki/Arriate_(M%C3%A1laga)" target="_blank"
-                        style="color: white; font-style: italic;">Descubre más sobre Arriate</a>.</li>
-                <li><a href="https://es.wikipedia.org/wiki/Ronda" target="_blank" style="color: white; 
-                font-style: italic;">Descubre más sobre Ronda y la Serranía</a>.</li>
-            </ol>
 
-        </aside>
-    </div>
+        
+    </div>    
+    <!--Panel auxiliar ">"-->
+    <label for="toggle">></label>
+    <input type="checkbox" id="toggle">
+    <aside>
+        <h2>Información</h2>
+        <h3>IMPORTANTE: El único producto disponible por ahora es la Mistela Arriate</h3>
+        <p>Profundiza en nuestras raíces:</p>
+        <!--Cambiar y poner el color y fuente en el css-->
+        <ol>
+            <li><a href="https://goo.gl/maps/Z1EhEzPywQRXK1YV6" target="_blank">Dónde estamos</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Arriate_(M%C3%A1laga)" target="_blank">Descubre más sobre Arriate</a>.</li>
+            <li><a href="https://es.wikipedia.org/wiki/Ronda" target="_blank">Descubre más sobre Ronda y la Serranía</a>.</li>
+        </ol>
 
-    <!--Párrafo e imagenes-->
-    <div class="container-imagenes">
-        <div class="imagen-mistela">
-            <a href="static/image/mistela.png" target="_blank">
-                <img src="static/image/mistela.png" atl="imagen mistela"
-                    title="Una botella de la famosa Mistela de Arriate">
-            </a>
-        </div>
-    </div>
-    <section class="fondo-texto">
-        <div class="parrafo-principal">
+    </aside>
+    <!--Contenido principal-->
+    <div class="contenedor-principal">
+        <section class="informacion">
             <h1>Mistela</h1>
-            <h2>Precio: 10'95€/botella</h2>
+            <h2>Precio: 10'95€/1L</h2>
             <p>
-                La Mistela es un licor de hierbas con un peculiar sabor a canela.
+                La mistela es un licor elaborado con la mezcla de mosto de uva y alcohol.
             </p>
             <p>
                 La <span class="critical-words">Mistela de Arriate</span> es famosa en gran parte de la provincia de
@@ -83,26 +74,41 @@
                     class="critical-words">patrimonio Inmaterial de Andalucía</span>, y
                 es uno de los licores más tradicionales de la Serranía de Ronda.
             </p>
-        </div>
-    </section>
+            <p>Puedes ver más sobre sus ingredientes a través de este <a href="https://www.youtube.com/watch?v=mUc7aFD7wHk&ab_channel=MistelaDeArriate" target="_blank">video</a>, 
+                que nos ofrece el mismo Miguel López
+                
+            </p>
+        </section>
+        <section class="imagenes">
+            <div class="galeria">
+                <a href="static/image/mistela.png" target="_blank">
+                    <img src="static/image/mistela.png" atl="imagen mistela"
+                        title="Botella mistela">
+                </a>
+            </div>
+            <div class="galeria">
+                <a href="static/image/creatividad-malaga.png" target="_blank">
+                    <img src="static/image/creatividad-malaga.png" atl="imagen mistela"
+                        title="Creatividad sabor a malaga">
+                </a>
+            </div>
+        </section>
+    </div>
 
 </body>
 
 <!--Pie de página-->
 
 <footer>
-    <div class="footer-text-left">
+    <div class="footer-contenedor-texto">
         <p class="copyright">&copy;2022 Raúl Durán Racero. Todos los derechos reservados.</p>
     </div>
 
-    <div class="footer-content-right">
+    <div class="footer-contenedor-iconos">
         <ul>
-            <li><a href="https://twitter.com/RalDurn8" target="_blank"><img src="static/image/twitter.jpeg"
-                        class="icon-style" alt="Twitter icon"></a></li>
-            <li><a href="https://github.com/elB1MBO" target="_blank"><img src="static/image/github.jpeg"
-                        class="icon-style" alt="Github icon"></a></li>
-            <li><a href="https://pradogrado2122.ugr.es/" target="_blank"><img src="static/image/email.jpeg"
-                        class="icon-style" alt="Email icon"></a></li>
+            <li><a href="https://twitter.com/RalDurn8" target="_blank"><img src="static/image/twitter.jpeg" class="icon-style" alt="Twitter icon"></a></li>
+            <li><a href="https://github.com/elB1MBO" target="_blank"><img src="static/image/github.jpeg" class="icon-style" alt="Github icon"></a></li>
+            <li><a href="https://pradogrado2122.ugr.es/" target="_blank"><img src="static/image/email.jpeg" class="icon-style" alt="Email icon"></a></li>
         </ul>
     </div>
 
