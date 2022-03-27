@@ -8,7 +8,7 @@
 }
 /*para que sea responsive*/
 @media screen and (max-width:800px) {
-    foorer{
+    footer{
         width: 100%;
         grid-template-columns: repeat((1,1fr));
         grid-gap: 1px;

@@ -35,27 +35,28 @@
         
     </div>    
     <!--Panel auxiliar ">"-->
-    <label for="toggle">></label>
-    <input type="checkbox" id="toggle">
-    <aside>
-        <h2>Información</h2>
-        <h3>IMPORTANTE: El único producto disponible por ahora es la Mistela Arriate</h3>
-        <p>Profundiza en nuestras raíces:</p>
-        <!--Cambiar y poner el color y fuente en el css-->
-        <ol>
-            <li><a href="https://goo.gl/maps/Z1EhEzPywQRXK1YV6" target="_blank">Dónde estamos</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Arriate_(M%C3%A1laga)" target="_blank">Descubre más sobre Arriate</a>.</li>
-            <li><a href="https://es.wikipedia.org/wiki/Ronda" target="_blank">Descubre más sobre Ronda y la Serranía</a>.</li>
-        </ol>
-
-    </aside>
+    <div class="panel-auxiliar">
+        <label for="toggle">></label>
+        <input type="checkbox" id="toggle">
+        <aside>
+            <h2>Información</h2>
+            <h3>IMPORTANTE: El único producto disponible por ahora es la Mistela Arriate</h3>
+            <p>Profundiza en nuestras raíces:</p>
+            <!--Cambiar y poner el color y fuente en el css-->
+            <ol>
+                <li><a href="https://goo.gl/maps/Z1EhEzPywQRXK1YV6" target="_blank">Dónde estamos</a></li>
+                <li><a href="https://es.wikipedia.org/wiki/Arriate_(M%C3%A1laga)" target="_blank">Descubre más sobre Arriate</a>.</li>
+                <li><a href="https://es.wikipedia.org/wiki/Ronda" target="_blank">Descubre más sobre Ronda y la Serranía</a>.</li>
+            </ol>
+        </aside>
+    </div>
     <!--Contenido principal-->
     <div class="contenedor-principal">
         <section class="informacion">
             <h1>Mistela</h1>
             <h2>Precio: 10'95€/1L</h2>
             <p>
-                La mistela es un licor elaborado con la mezcla de mosto de uva y alcohol.
+                La mistela es un licor elaborado a partir de una infusión de hierbas, a la que se añade azúcar y anís.
             </p>
             <p>
                 La <span class="critical-words">Mistela de Arriate</span> es famosa en gran parte de la provincia de
@@ -74,10 +75,41 @@
                     class="critical-words">patrimonio Inmaterial de Andalucía</span>, y
                 es uno de los licores más tradicionales de la Serranía de Ronda.
             </p>
-            <p>Puedes ver más sobre sus ingredientes a través de este <a href="https://www.youtube.com/watch?v=mUc7aFD7wHk&ab_channel=MistelaDeArriate" target="_blank">video</a>, 
-                que nos ofrece el mismo Miguel López
-                
+            <p>Puedes ver más sobre sus ingredientes a través de este 
+                <a href="https://www.youtube.com/watch?v=mUc7aFD7wHk&ab_channel=MistelaDeArriate" target="_blank">video</a>, 
+                que nos ofrece el mismo Miguel López.
             </p>
+            <p>También puede ser de su interés esta <a href="https://www.youtube.com/watch?v=pWnYNxow7JM&ab_channel=GrupoGourmets" target="_blank">entrevista</a> sobre la Mistela en Sabor a Málaga</p>
+            
+            <!--Seccion de comentarios-->
+            <button type="button" class="boton-mostrar" onclick="setDisplay()">
+                <i class="fa-regular fa-comment-dots icon-color fa-5x"></i>
+            </button>
+            <section id="container-comentarios">
+                <form> <!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
+                    <div class="container-name">
+                        <label>Nombre:</label><br>
+                        <input class="name-input" type="text" id="name">
+                    </div>
+                    <div class="container-email">
+                        <label>E-mail:</label><br>
+                        <input class="email-input" type="email" id="email">
+                    </div>
+                    <div class="container-comment">
+                        <label>Comentario:</label><br>
+                        <textarea id="comment" class="comment-box"></textarea>
+                    </div>
+                    <button type="button" class="boton-enviar" onclick="commentBox()">Enviar</button>
+                </form>
+
+                <ul id="lista-comentarios">
+                
+                </ul>
+
+            </section>
+
+            
+
         </section>
         <section class="imagenes">
             <div class="galeria">
@@ -88,7 +120,7 @@
             </div>
             <div class="galeria">
                 <a href="static/image/creatividad-malaga.png" target="_blank">
-                    <img src="static/image/creatividad-malaga.png" atl="imagen mistela"
+                    <img src="static/image/creatividad-malaga.png" atl="creatividad-malaga"
                         title="Creatividad sabor a malaga">
                 </a>
             </div>
@@ -96,6 +128,11 @@
     </div>
 
 </body>
+
+
+<!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
+
+<script src="static/js/comentario.js"></script>
 
 <!--Pie de página-->
 
@@ -108,10 +145,39 @@
         <ul>
             <li><a href="https://twitter.com/RalDurn8" target="_blank"><img src="static/image/twitter.jpeg" class="icon-style" alt="Twitter icon"></a></li>
             <li><a href="https://github.com/elB1MBO" target="_blank"><img src="static/image/github.jpeg" class="icon-style" alt="Github icon"></a></li>
+            <li><a href="https://www.facebook.com/Mistela-de-Arriate-1520195991617601" target="_blank"><img src="static/image/facebookIcon.png" class="icon-style" alt="Email icon"></a></li>
             <li><a href="https://pradogrado2122.ugr.es/" target="_blank"><img src="static/image/email.jpeg" class="icon-style" alt="Email icon"></a></li>
         </ul>
     </div>
 
 </footer>
 
+<!--Codigo del kit de iconos-->
+<script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+
 </html>
+
+
+<!--Los scripts los ponemos al final del archivo html-->
+<!--
+<script type="text/javascript" src="ruta del fichero js"/>
+
+var cad="Hola"
+Console.log(cad); -> salida por consola
+alert(cad) -> pestaña emergente que pone Hola
+
+for(var i=0; cad.lenght; i++){...}
+
+slice() 
+Para obtener un email
+var elemento = document.getElementById("id")
+Si hicieramos:
+Console.log(elemento) -> sacaría: input type ...
+//añadimosla funcion validate al event listener
+elemento.addEventListener("onClick", validate);
+definir una funcion:
+function namefuncion(parametros){...}
+hay que indicarle las palabras malsonantes que queramos
+var array[];
+var array = document.getElementByClass()
+-->

@@ -8,7 +8,7 @@
 }
 /*para que sea responsive*/
 @media screen and (max-width:800px) {
-    foorer{
+    footer{
         width: 100%;
         grid-template-columns: repeat((1,1fr));
         grid-gap: 1px;
@@ -18,14 +18,10 @@
 /* el caracter "*" sirve para establecerlo en todo el archivo*/
 *{
     color: black;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-/*Para marcar bordes-> border: 1px solid red;*/
 
-/* h1{ h1 es header 1, esta tambien h2, etc.
-    display: inline;
-} */
 ul{
     width: 100%;
     height: 30%;
@@ -58,7 +54,7 @@ body{
 /*Cabecera*/
 .header{
     height: 20%;
-    width: 110%;
+    width: 100%;
     position: relative;
     top: -1%;
     left: -1%;
@@ -74,12 +70,11 @@ body{
 }
 /*Contenedor logo*/
 .container-logo{
-    width: 20%;
+    position: absolute;
+    transform: translateX(600%);
+    width: 10%;
     height: 100%;
     display: inline;
-
-    float: right;
-    padding-left: 2.5%;
     align-items: center;
 }
 /*Logo*/
@@ -89,20 +84,21 @@ body{
     max-height: 100%;
     display: block;
     object-fit: fill;
-    margin-left: 30%;
+    margin: 0%;
 }
 
 /*Contenedor titulo y menu*/
 .container-title-menu{
+    position: absolute;
     display: inline;
-    float: left;
-    width: 90%;
+    left: 0;
+    width: 50%;
     height: auto;
     text-align: center;
 }
 .container-title-menu h1{
     height: 20%;
-    font-family: Cremona;
+    /* font-family: Cremona; */
 }
 .container-title-menu h2{
     height: 20%;
@@ -235,9 +231,6 @@ input[type=checkbox]:checked + aside {
         grid-template-rows: repeat(auto-fill, minmax(min(100%,25rem), 1fr));
     }
 }
-
-
-
 
 /*Destacar palabras importantes con span*/
 .critical-words{
