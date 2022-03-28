@@ -82,7 +82,7 @@
             <p>También puede ser de su interés esta <a href="https://www.youtube.com/watch?v=pWnYNxow7JM&ab_channel=GrupoGourmets" target="_blank">entrevista</a> sobre la Mistela en Sabor a Málaga</p>
             
             <!--Seccion de comentarios-->
-            <button type="button" class="boton-mostrar" onclick="setDisplay()">
+            <button type="button" id="boton-mostrar">
                 <i class="fa-regular fa-comment-dots icon-color fa-5x"></i>
             </button>
             <section id="container-comentarios">
@@ -99,7 +99,7 @@
                         <label>Comentario:</label><br>
                         <textarea id="comment" class="comment-box"></textarea>
                     </div>
-                    <button type="button" class="boton-enviar" onclick="commentBox()">Enviar</button>
+                    <button type="button" id="boton-enviar">Enviar</button>
                 </form>
 
                 <ul id="lista-comentarios">
@@ -108,9 +108,8 @@
 
             </section>
 
-            
-
         </section>
+
         <section class="imagenes">
             <div class="galeria">
                 <a href="static/image/mistela.png" target="_blank">

@@ -230,10 +230,12 @@ input[type=checkbox]:checked + aside {
 
 /*Imagenes*/
 .imagenes{
+    height: 900px;
+
     display: grid;
     grid-gap: 1rem;
     margin: 2% 5%;
-    /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+    /*funcion repeat con auto-fill ajusta como puede con un minimo y maximo de tamaño*/
     grid-template-rows: repeat(2, minmax(min(100%,25rem), 1fr));
 }
 /*Para ajustar el grid de las imagenes cuando se reduce la pantalla por debajo de 80 rem (aprox. 1300px)*/
@@ -290,6 +292,9 @@ input[type=checkbox]:checked + aside {
     flex-direction: column-reverse;
     padding-right: 40px;
     border: 1px black;
+}
+#container-comentarios ul li{
+    list-style: none;
 }
 
 
