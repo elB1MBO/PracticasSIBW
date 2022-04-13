@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+    {% block link %}
+    <link rel="stylesheet" href="static/css/producto_imprimir.css">
+    {% endblock %}
+
+    {% block cuerpo %}
+    <!--Contenido principal-->
+    <div class="contenedor-principal">
+        <section class="informacion">
+            <h1>{{ nombre }}</h1>
+            <h2>Precio: {{ precio }}</h2>
+            <p>
+                La mistela es un licor elaborado a partir de una infusión de hierbas, a la que se añade azúcar y anís.
+            </p>
+            <p>
+                La <span class="critical-words">Mistela de Arriate</span> es famosa en gran parte de la provincia de
+                Málaga por el intenso y peculiar sabor de
+                este licor de hierbas.
+                La tradición sobre la elaboración de la mistela es generacional, transmitiéndose la receta de generación
+                en
+                generación. Son muchas las familias arriateñas que tienen su propia receta de la mistela, pero la receta
+                original y más abanderada la posee
+                actualmente <span class="critical-words">Miguel López Ramirez</span>.
+            </p>
+            <p>
+                La mistela hoy dia se comercia a nivel nacional, con perspectivas de proyectarse a nivel
+                internacional.<br>
+                La Mistela de Arriate está reconocida por la Junta de Andalucía como <span
+                    class="critical-words">patrimonio Inmaterial de Andalucía</span>, y
+                es uno de los licores más tradicionales de la Serranía de Ronda.
+            </p>
+            <p>Puedes ver más sobre sus ingredientes a través de este 
+                <a href="https://www.youtube.com/watch?v=mUc7aFD7wHk&ab_channel=MistelaDeArriate" target="_blank">video</a>, 
+                que nos ofrece el mismo Miguel López.
+            </p>
+            <p>También puede ser de su interés esta <a href="https://www.youtube.com/watch?v=pWnYNxow7JM&ab_channel=GrupoGourmets" target="_blank">entrevista</a> sobre la Mistela en Sabor a Málaga</p>
+            
+            <!--Seccion de comentarios-->
+            <button type="button" id="boton-mostrar">
+                <i class="fa-regular fa-comment-dots icon-color fa-5x"></i>
+            </button>
+            <section id="container-comentarios">
+                <form> <!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
+                    <div class="container-name">
+                        <label>Nombre:</label><br>
+                        <input class="name-input" type="text" id="name">
+                    </div>
+                    <div class="container-email">
+                        <label>E-mail:</label><br>
+                        <input class="email-input" type="email" id="email">
+                    </div>
+                    <div class="container-comment">
+                        <label>Comentario:</label><br>
+                        <textarea id="comment" class="comment-box"></textarea>
+                    </div>
+                    <button type="button" id="boton-enviar">Enviar</button>
+                </form>
+
+                <ul id="lista-comentarios">
+                
+                </ul>
+
+            </section>
+
+        </section>
+
+        <section class="imagenes">
+            <div class="galeria">
+                <a href="static/image/mistela.png" target="_blank">
+                    <img src="static/image/mistela.png" atl="imagen mistela"
+                        title="Botella mistela">
+                </a>
+            </div>
+            <div class="galeria">
+                <a href="static/image/creatividad-malaga.png" target="_blank">
+                    <img src="static/image/creatividad-malaga.png" atl="creatividad-malaga"
+                        title="Creatividad sabor a malaga">
+                </a>
+            </div>
+        </section>
+    </div>
+    {% endblock %}
+
