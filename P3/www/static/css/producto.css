@@ -221,6 +221,7 @@ input[type=checkbox]:checked + aside {
 }
 .informacion p{
     color: black;
+    text-align: justify;
 }
 .informacion a{
     color: black;
@@ -263,9 +264,6 @@ input[type=checkbox]:checked + aside {
 #container-comentarios .panel label{
     color: black;
 }
-#container-comentarios textarea{
-    resize: none;
-}
 /*Cambiar de color el icono*/
 .icon-color{
     color: black;
@@ -286,8 +284,9 @@ input[type=checkbox]:checked + aside {
 }
 #container-comentarios form div textarea{
     color: black;
-
+    resize: none;
     width: 50%;
+    height: 10%;
 }
 
 #container-comentarios ul{

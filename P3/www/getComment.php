@@ -9,23 +9,29 @@
     //Recibimos por POST los datos procedentes del formulario
     $nombre = $_GET["name"];
     $email = $_GET["email"];
-    $fecha = $_GET("fecha");
+    $fecha = $_GET["fecha"];
     $comentario = $_GET["comentario"];
 
     $id = $_GET["id"];
 
     //Abrimos la conexión a la base de datos
     //include("conectar.php");
-    $_LEER_SQL = "SELECT * FROM $comentarios WHERE $id = $producto.id";
+    /* $_LEER_SQL = "SELECT * FROM comentarios";
     $stmt = $mysqli->prepare($_LEER_SQL);
-    $stmt->execute();
+    $stmt->execute(); */
 
-    $res = $stmt->get_result();
-    if(!$res)
-        echo "No se pudo leer correctamente el comentario";
-    else
-        echo "-------LEIDO--------";
+    $result = mysqli_query($mysqli, "SELECT * FROM comentarios");
+
+    $datos = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $datos[] = $row;
+    }
+
+    echo json_encode($datos);
+
     //Cerramos conexion con la base de datos
     //include("desconectar.php);
 
+    //guardamos en la bd una referencia a la imagen, en vez de un blob
 ?>
+

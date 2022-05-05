@@ -6,7 +6,7 @@ const id = document.getElementById("container-comentarios");
 //Listener del botón de comentario:
 document.getElementById("boton-mostrar").addEventListener('click', setDisplay);
 var firstTime = true;
-document.getElementById("boton-mostrar").addEventListener('click', defaultComments);
+document.getElementById("boton-mostrar").addEventListener('click', getComments);
 //Cuando se escribe una palabrota, llama a la función que censura
 document.getElementById("comment").addEventListener('keypress', censurarPalabras);
 //Listener del boton de enviar
@@ -19,13 +19,10 @@ function ocultar(elemento) {
     elemento.style.display = "none";
 }
 function setDisplay() {
-    console.log("Entra en la funcion");
     if (window.getComputedStyle(id).display !== "none") {
-        console.log("Entra en el if");
         ocultar(id);
         return false;
     }
-    console.log("Muestra");
     mostrar(id);
 }
 
@@ -36,25 +33,30 @@ function validarEmail(email) {
 
     return expresión.test(email);
 }
-//Palabras prohibidas
-const badWords = ["tonto", "gilipollas", "idiota", "polla", "coño", "bimbo", "matón",
-    "zorra", "imbecil", "imbécil", "puta"];
-//Funcion para obtener las palabras prohibidas de la bd
-function getBadWords() {
-    var xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
-            badwords_json = JSON.parse(this.responseText);
-            for(var obj of badwords_json){
-                badWords.push(obj["palabra"]);
-            }
+//-------------------Palabras prohibidas-----------------------
+var badWords = [];
+
+//Usamos AJAX para obtener un JSON con las palabras prohibidas
+function getBadWords(){
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "getBadWords.php", true);
+    ajax.send();
+
+    ajax.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            var palabrotas = JSON.parse(this.responseText);
+            console.log(palabrotas);
+
+            badWords = palabrotas;
         }
-    };
-
-    xhttp.open("GET", "http://localhost/badWords.php", true);
-    xhttp.send();
+    }
 }
+//Funcion para obtener las palabras prohibidas de la bd
+//Sin AJAX sería que en la plantilla habria que imprimirlas en algun sitio
+//Por ej: poniendo un bloque de js inicializado un bloque de codigo js desde twig que tenga las palabras
+//O: poner las palabras en un div que no se vea y desde javascript leer estas palabras para utilizarlas.
+
 //Función para censurar palabras
 function censurarPalabras(key) {
     if (key.key == "Enter" || key.key == " " || key.key == "," || key.key == ".") {
@@ -102,12 +104,8 @@ function commentBox() {
     createComment(name, email, comment);
 }
 //Función que crea el comentario
-function createComment(n, e, c) {
+function createComment(name, email, comment, date) {
 
-    var name = n;
-    var email = e;
-    var comment = c;
-    
     //Comprueba que los campos sean correctos
     if (name == "") {
         alert("Por favor, introduzca su nombre.");
@@ -118,7 +116,7 @@ function createComment(n, e, c) {
     } else {
 
         //Una vez comprobado que todo esta correcto, lo añade a la BD
-        postData(name, email, comment);
+        postComment(name, email, comment, date);
 
         //Una vez ha comprobado que tood esté correcto, añade el comentario a la lista
         var parent = document.createElement('li');
@@ -127,14 +125,12 @@ function createComment(n, e, c) {
         var comment_child = document.createElement('p');
         var space = document.createElement('br');
         var line = document.createElement('hr'); //hr sirve para definir separaciones de texto
-        var date = new Date();
         var date_child = document.createElement('label');
         //Creamos los nodos de texto que queremos
         var name_txt = document.createTextNode(name);
         var comment_txt = document.createTextNode(comment);
         var email_txt = document.createTextNode(email);
-        var date_text = document.createTextNode("Hora: " + date.getHours() + ":" + date.getMinutes() +
-            ", Fecha: " + date.getDate() + "-" + (date.getUTCMonth() + 1) + "-" + date.getFullYear());
+        var date_text = document.createTextNode(date);
         //Añadimos a los hijos el texto correspondiente
         name_child.appendChild(name_txt);
         email_child.appendChild(email_txt);
@@ -159,25 +155,57 @@ function createComment(n, e, c) {
         document.getElementById("lista-comentarios").appendChild(parent);
 
     }
+}
 
-    function postData(n, e, c) {
-        var datos = {name: n, email: e, comment: c};
-        console.log(name);
-        console.log(email);
-        console.log(comment);
-        fetch('postComment.php', {
-            method: 'POST',
-            //body: JSON.stringify(datos),
-            body: datos
-        })
-            .then( res => res.json())
-            .then( data => {
-                console.log('Exito: ', data);
-            })
-            .catch((error) => {
-                console.log('Error:' , error);
-            });
+//Obtenemos los comentarios con AJAX
+function getComments(){
+    if(firstTime){
+        firstTime = false;
+        var ajax = new XMLHttpRequest();
+        var method = "GET";
+        var url = "getComment.php";
+
+        ajax.open(method, url, true);
+        ajax.send();
+
+        ajax.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                //convertir el JSON en un array
+                var datos = JSON.parse(this.responseText);
+                console.log(datos);
+
+                //Asignamos los datos del array, que contiene n comentarios:
+                for(var i = 0; i < datos.length; i++){
+                    var name = datos[i].nombre;
+                    var email = datos[i].email;
+                    var fecha = datos[i].fecha;
+                    var comentario = datos[i].comentario;
+                    //Crea el comentario
+                    createComment(name, email, comentario, fecha);
+                }
+            }
+        }
     }
+}
+
+//Subir comentario (Practica 4)
+function postComment(n, e, c) {
+    var datos = {name: n, email: e, comment: c};
+    console.log(name);
+    console.log(email);
+    console.log(comment);
+    fetch('postComment.php', {
+        method: 'POST',
+        //body: JSON.stringify(datos),
+        body: datos
+    })
+        .then( res => res.json())
+        .then( data => {
+            console.log('Exito: ', data);
+        })
+        .catch((error) => {
+            console.log('Error:' , error);
+        });
 }
 
 
