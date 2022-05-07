@@ -1,10 +1,7 @@
 <?php
-
-    $mysqli = new mysqli("mysql", "usuario1", "user1", "SIBW");
-
-    if($mysqli->connect_errno){
-        echo("Fallo al conectarse a la base de datos: " . $mysqli->connect_errno);
-    }
+    include("connect.php");
+    include("disconnect.php");
+    $mysqli = conectar();
 
     //$palabrotas = $_GET["palabrota"];
 
@@ -19,7 +16,6 @@
     echo json_encode($palabrotas);
 
     //Cerramos conexion con la base de datos
-    //include("desconectar.php);
+    desconectar($mysqli);
 
-    //guardamos en la bd una referencia a la imagen, en vez de un blob
 ?>

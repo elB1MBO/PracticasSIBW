@@ -1,10 +1,10 @@
 <?php
+    include("connect.php");
+    include("disconnect.php");
+
     function getProducto($idPr){
         #Consulta a la BD:
-        $mysqli = new mysqli("mysql", "usuario1", "user1", "SIBW");
-        if($mysqli->connect_errno){
-            echo("Fallo al conectarse a la base de datos: " . $mysqli->connect_errno);
-        }
+        $mysqli = conectar();
 
         $stmt = $mysqli->prepare("SELECT * FROM productos WHERE id= ?");
         $stmt->bind_param("s", $idPr);
@@ -17,6 +17,10 @@
             $producto = array('nombre' => $row['nombre'], 'precio' => $row['precio'], 'descripcion' => $row['descripcion'], 
             'pr' => $idPr, 'imagen' => $row['imagen'], 'imagen2' => $row['imagen2']);
         }
+
+        //Cerramos conexion con la base de datos
+        desconectar($mysqli);
+
         return $producto;
     }
 ?>

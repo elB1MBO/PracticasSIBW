@@ -1,8 +1,9 @@
 <?php
 
-    //include("producto.php");
+    include("connect.php");
 
     #Este script sirve para devolver los datos de la imagen
+    
     if(isset($_GET['pr'])){
         $idPr = $_GET['pr'];
     } else {
@@ -10,11 +11,7 @@
     }
     //$idPr = getIdPr();
     
-    $mysqli = new mysqli("mysql", "usuario1", "user1", "SIBW");
-
-    if($mysqli->connect_errno){
-        echo("Fallo al conectarse a la base de datos: " . $mysqli->connect_errno);
-    }
+    $mysqli = conectar();
 
     $stmt = $mysqli->prepare("SELECT imagen2 FROM productos WHERE id= ?");
     $stmt->bind_param("s", $idPr);
