@@ -45,8 +45,12 @@ function getBadWords(){
 
     ajax.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            var palabrotas = JSON.parse(this.responseText);
-            console.log(palabrotas);
+            var palabrotasObj = JSON.parse(this.responseText);
+            var palabrotas = [];
+            for(var i = 0; i < palabrotasObj.length; i++){
+                palabrotas[i] = palabrotasObj[i]['palabrota'];
+            }
+            //console.log("PALABROTAS:" +palabrotas);
 
             badWords = palabrotas;
         }
@@ -59,7 +63,10 @@ function getBadWords(){
 
 //Función para censurar palabras
 function censurarPalabras(key) {
-    if (key.key == "Enter" || key.key == " " || key.key == "," || key.key == ".") {
+    //Llamamos a nuestra función que obtiene las palabras censuradas de la base de datos
+    getBadWords();
+    //Y comprobamos cada vez que se introduce un caracter separador:
+    if (key.key == "\n" || key.key == " " || key.key == "," || key.key == "." || key.key == ";" || key.key == ":") {
         //alert("espacio o enter pulsado");
         //para censurar palabras de una cadena, hay que separarla primero
         var cadenaSplitted = document.getElementById("comment").value.split(" ");
@@ -69,6 +76,7 @@ function censurarPalabras(key) {
         var asteriscos = ""; //Array de los asteriscos que sustituirán la palabra
         for (var k = 0; k < badWords.length; k++) {
             //Comprobamos si la última palabra escrita (al final del array cadenaSplitted) está en baWords
+            console.log("En la cadena:"+cadenaSplitted[e]+", en badwords: "+badWords[k]);
             if (cadenaSplitted[e] == badWords[k]) {
                 //Crea los asteriscos necesarios
                 while (asteriscos.length < cadenaSplitted[e].length) {
