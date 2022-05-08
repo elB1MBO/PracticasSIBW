@@ -15,7 +15,7 @@
             $row = $res->fetch_assoc();
 
             $producto = array('nombre' => $row['nombre'], 'precio' => $row['precio'], 'descripcion' => $row['descripcion'], 
-            'pr' => $idPr, 'imagen' => $row['imagen'], 'imagen2' => $row['imagen2']);
+            'pr' => $idPr);
         }
 
         //Cerramos conexion con la base de datos

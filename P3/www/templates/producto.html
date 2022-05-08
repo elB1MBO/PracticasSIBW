@@ -10,33 +10,9 @@
         <section class="informacion">
             <h1>{{ producto['nombre'] }}</h1>
             <h2>Precio: {{ producto['precio'] }}</h2>
-            <p>{{ producto['descripcion'] }}</p>
-            <!-- <p>
-                La mistela es un licor elaborado a partir de una infusión de hierbas, a la que se añade azúcar y anís.
-            </p>
-            <p>
-                La <span class="critical-words">Mistela de Arriate</span> es famosa en gran parte de la provincia de
-                Málaga por el intenso y peculiar sabor de
-                este licor de hierbas.
-                La tradición sobre la elaboración de la mistela es generacional, transmitiéndose la receta de generación
-                en
-                generación. Son muchas las familias arriateñas que tienen su propia receta de la mistela, pero la receta
-                original y más abanderada la posee
-                actualmente <span class="critical-words">Miguel López Ramirez</span>.
-            </p>
-            <p>
-                La mistela hoy dia se comercia a nivel nacional, con perspectivas de proyectarse a nivel
-                internacional.<br>
-                La Mistela de Arriate está reconocida por la Junta de Andalucía como <span
-                    class="critical-words">patrimonio Inmaterial de Andalucía</span>, y
-                es uno de los licores más tradicionales de la Serranía de Ronda.
-            </p>
-            <p>Puedes ver más sobre sus ingredientes a través de este 
-                <a href="https://www.youtube.com/watch?v=mUc7aFD7wHk&ab_channel=MistelaDeArriate" target="_blank">video</a>, 
-                que nos ofrece el mismo Miguel López.
-            </p>
-            <p>También puede ser de su interés esta <a href="https://www.youtube.com/watch?v=pWnYNxow7JM&ab_channel=GrupoGourmets" target="_blank">entrevista</a> sobre la Mistela en Sabor a Málaga</p>
-             -->
+            <!--Filtro raw para dar formato a la desripcion del producto-->
+            <p>{{ producto['descripcion'] | raw }}</p>
+            
             <!--Seccion de comentarios-->
             <button type="button" id="boton-mostrar">
                 <i class="fa-regular fa-comment-dots icon-color fa-5x"></i>
@@ -67,15 +43,19 @@
 
         <section class="imagenes">
             <div class="galeria">
-                <!--<a href="/static/image/mistela.png" target="_blank">-->
-                    <img src="getImage.php?pr={{ producto['pr'] }}" atl="imagen-producto"
+                    <!-- <a href="./static/image/{{ imagen['imagen'] }}" target="_blank"> -->
+                    <!-- <img src="data:image/png;base64,{{ imagen['imagen']}}" atl="imagen-producto"
+                        title="Imagen Producto"> -->
+                    <img src="getImage.php?pr={{producto['pr']}}" atl="imagen-producto"
                         title="Imagen Producto">
                 </a>
             </div>
             <div class="galeria">
-                <!--<a href="static/image/creatividad-malaga.png" target="_blank">-->
-                    <img src="getImage2.php?pr={{ producto['pr'] }}" atl="marca-producto"
-                        title="Marca del producto">
+                    <!-- <a href="./static/image/{{ imagen['marca'] }}" target="_blank"> -->
+                    <!-- <img src="{{ imagen['marca'] }}" atl="marca-producto"
+                        title="Marca del producto"> -->
+                    <img src="getImage2.php?pr={{producto['pr']}}" atl="imagen-producto"
+                        title="Imagen Producto">
                 </a>
             </div>
         </section>
