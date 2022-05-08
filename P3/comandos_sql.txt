@@ -1,0 +1,25 @@
+ 
+# Para conectar a nuestra base de datos (como root):
+mysql -h 127.0.0.1 -P 3306 -u root -p
+
+# Para crear una base de datos llamada SIBW
+create database SIBW;
+
+# Para dar permisos a esa base de datos a un usuario (y no entrar como root, que es peligroso)
+
+CREATE USER 'usuario1'@'%' IDENTIFIED BY 'user1'; 
+GRANT create, delete, drop, index, insert, select, update ON SIBW.* TO 'usuario1'@'%';
+
+# Para salir del cliente MySQL
+exit
+
+
+# Para entrar como el usuario que acabamos de crear
+mysql -h 127.0.0.1 -P 3306 -u usuario1 -p
+
+# Para que el usuario use la BD SIBW
+use SIBW
+
+En mi caso, he utilizado phpMyAdmin desde localhost:8080 para trabajar más cómodamente
+con la base de datos.
+

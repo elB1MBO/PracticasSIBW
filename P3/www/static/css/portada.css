@@ -181,6 +181,10 @@ aside h2{
     height: auto;
     margin-left: 5%;
 }
+aside p{
+    height: auto;
+    margin-left: 5%;
+}
 /*Diseño de las secciones de la lista ol*/
 aside ol li a{
     font-style: italic;

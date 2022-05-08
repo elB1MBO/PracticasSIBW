@@ -14,7 +14,10 @@
         $idPr = -1;
     }
 
-    $imagen = getImage($idPr);
+    //$imagen = getImage($idPr);
+    //Sacar las fotos
+    getImage($idPr);
+    getMarca($idPr);
 
     echo $twig->render('producto.html', ['imagen' => $imagen]);
 

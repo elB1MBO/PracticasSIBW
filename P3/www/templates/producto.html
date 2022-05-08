@@ -8,8 +8,8 @@
     <!--Contenido principal-->
     <div class="contenedor-principal">
         <section class="informacion">
-            <h1>{{ producto['nombre'] }}</h1>
-            <h2>Precio: {{ producto['precio'] }}</h2>
+            <h1>{{ producto['nombre'] | raw }}</h1>
+            <h2>Precio: {{ producto['precio'] | raw }}</h2>
             <!--Filtro raw para dar formato a la desripcion del producto-->
             <p>{{ producto['descripcion'] | raw }}</p>
             
@@ -43,7 +43,7 @@
 
         <section class="imagenes">
             <div class="galeria">
-                    <!-- <a href="./static/image/{{ imagen['imagen'] }}" target="_blank"> -->
+                    <!-- <a href="static/image/{{ imagen['imagen'] }}" target="_blank"> -->
                     <!-- <img src="data:image/png;base64,{{ imagen['imagen']}}" atl="imagen-producto"
                         title="Imagen Producto"> -->
                     <img src="getImage.php?pr={{producto['pr']}}" atl="imagen-producto"

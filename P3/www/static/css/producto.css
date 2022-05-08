@@ -177,6 +177,10 @@ aside h2{
     height: auto;
     margin-left: 5%;
 }
+aside p{
+    height: auto;
+    margin-left: 5%;
+}
 /*Diseño de las secciones de la lista ol*/
 aside ol li a{
     font-style: italic;
@@ -216,6 +220,7 @@ input[type=checkbox]:checked + aside {
 }
 .informacion h1{
     color: black;
+    padding-left: 0%;
 }
 .informacion h2{
     color: black;

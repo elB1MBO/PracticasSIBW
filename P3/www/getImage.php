@@ -21,7 +21,6 @@
 
     if ($res->num_rows>0){
         $row = $res->fetch_assoc();
-
         echo $row['imagen'];
     }
 
