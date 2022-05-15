@@ -1,0 +1,43 @@
+<html>
+<head>
+    <!--Página de login-->
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+
+<body>
+    <!--La página para iniciar sesión o registrarse no tendrá cabecera-->
+    <!--Una flecha para volver a la pagina principal-->
+    <div class="back">
+        <a href="index.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+    </div>
+
+    <div class="container-principal">
+        <!--Botones para cambiar entre pestaña de registro y de inicio-->
+        <div class="botones">
+            <div id="graphic-button"></div>
+            <button type="button" class="toggle-button" id="toggle-login">Iniciar Sesión</button>
+            <button type="button" class="toggle-button" id="toggle-register">Registrarse</button>
+        </div>
+        <!--Contenido-->
+        <section id="container-content">
+            <form class="input-group" id="login"> <!--Iniciar sesion-->
+                <input type="text" class="input-field" placeholder="Nombre de usuario" required>
+                <input type="text" class="input-field" placeholder="Contraseña" required>
+                <input type="checkbox" class="check-box"><span>Recuérdame</span>
+                <button type="submit" class="submit-button" id="login-button">Iniciar sesión</button>
+            </form>
+            <form class="input-group" id="register"> <!--Registrarse-->
+                <input type="text" class="input-field" placeholder="Nombre de usuario" required>
+                <input type="text" class="input-field" placeholder="Correo electrónico" required>
+                <input type="text" class="input-field" placeholder="Contraseña" required>
+                <input type="checkbox" class="check-box"><span>Acepto los términos y condiciones.</span>
+                <button type="submit" class="submit-button" id="login-button">Registrarse</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="static/js/login.js"></script>
+    <script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

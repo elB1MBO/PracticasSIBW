@@ -1,0 +1,146 @@
+/*Pagina inicio y registro*/
+/*Fuente de google para texto*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/*Fuente para titulo*/
+@font-face {
+    font-family: Cremona;
+    src: url(../font/Cremona\ Regular\ TTF.ttf);
+}
+/*para que sea responsive*/
+@media screen and (max-width:800px) {
+    footer{
+        width: 100%;
+        grid-template-columns: repeat((1,1fr));
+        grid-gap: 1px;
+    }
+}
+
+*{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(71, 67, 57, 0.4),rgba(165, 146, 117, 0.4)),
+    url(https://ep01.epimg.net/politica/imagenes/2017/11/13/diario_de_espana/1510567236_342790_1510567390_noticia_normal.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.back{
+    width: 8%;
+    height: 8%;
+    margin-top: 1%;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    text-align: center;
+    font-size: 50px;
+    color: rgba(245, 245, 220, 1);
+    border: 0;
+}
+.back i{
+    color: rgb(245, 245, 220);
+}
+
+.container-principal{
+    margin: 5% auto;
+    width: 30%;
+    height: 70%;
+    position: relative;
+    background-color: rgba(245, 245, 220, 0.85);
+    border-radius: 2%;
+    padding: 3%;
+    overflow: hidden;
+}
+
+.botones{
+    width: 100%;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px rgba(230, 107, 59, 0.122);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-button{
+    margin: 0 auto;
+    padding: 4% 5%;
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+    outline: none; 
+    position: relative;
+    text-align: center;
+    font-size: large;
+}
+
+#graphic-button{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(196, 115, 115), rgb(184, 53, 53));
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#container-content{
+    width: 100%;
+    height: 80%;
+    margin: 10% auto;
+    /* background-color: rgba(206, 65, 65, 0.4); */
+    position: relative;
+}
+
+.input-group{
+    width: 100%;
+    height: 80%;
+    margin: 10% auto;
+    position: absolute;
+    transition: .5s;
+}
+
+.input-field{
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(94, 92, 88);
+    background: transparent;
+}
+
+.submit-button{
+    width: 65%;
+    height: 13%;
+    padding: auto;
+    cursor: pointer;
+    display: block;
+    margin: 2% auto;
+    border: 0;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(196, 115, 115), rgb(184, 53, 53));
+    font-size: large;
+}
+
+.check-box{
+    margin: 4% 1% 4%;
+}
+
+span{
+    margin: 3% 1% 3%;
+    font-size: small;
+    position: absolute;
+}
+
+#register{
+    left: 150%;
+}

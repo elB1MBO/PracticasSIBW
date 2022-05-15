@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+    {% block link %}
+    <link rel="stylesheet" href="static/css/producto.css">
+    {% endblock %}
+
+    {% block cuerpo %}
+    <!--Contenido principal-->
+    <div class="contenedor-principal">
+        <section class="informacion">
+            <h1>{{ producto['nombre'] | raw }}</h1>
+            <h2>Precio: {{ producto['precio'] | raw }}</h2>
+            <!--Filtro raw para dar formato a la desripcion del producto-->
+            <p>{{ producto['descripcion'] | raw }}</p>
+            
+            <!--Seccion de comentarios-->
+            <button type="button" id="boton-mostrar">
+                <i class="fa-regular fa-comment-dots icon-color fa-5x"></i>
+            </button>
+            <section id="container-comentarios">
+                <form> <!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
+                    <div class="container-name">
+                        <label>Nombre:</label><br>
+                        <input class="name-input" type="text" id="name">
+                    </div>
+                    <div class="container-email">
+                        <label>E-mail:</label><br>
+                        <input class="email-input" type="email" id="email">
+                    </div>
+                    <div class="container-comment">
+                        <label>Comentario:</label><br>
+                        <textarea id="comment" class="comment-box"></textarea>
+                    </div>
+                    <button type="button" id="boton-enviar">Enviar</button>
+                </form>
+
+                <ul id="lista-comentarios">
+                
+                </ul>
+            </section>
+
+        </section>
+
+        <section class="imagenes">
+            <div class="galeria">
+                    <a href="static/image/{{ imagenes['imagen'] }}" target="_blank">
+                    <!-- <img src="data:image/png;base64,{{ imagen['imagen']}}" atl="imagen-producto"
+                        title="Imagen Producto"> -->
+                    <img src="static/image/{{ imagenes['imagen'] }}" atl="imagen-producto"
+                    title="Imagen Producto"/>
+                    <!-- <img src="getImage.php?pr={{producto['pr']}}" atl="imagen-producto"
+                        title="Imagen Producto"> -->
+                </a>
+            </div>
+            <div class="galeria">
+                    <a href="static/image/{{ imagenes['marca'] }}" target="_blank">
+                    <!-- <img src="data:image/png;base64,{{ imagen['imagen']}}" atl="imagen-producto"
+                        title="Imagen Producto"> -->
+                    <img src="static/image/{{ imagenes['marca'] }}" atl="marca-producto"
+                    title="Marca Producto"/>
+                </a>
+            </div>
+        </section>
+    </div>
+    {% endblock %}
+
+
+
+{% block scripts %}
+<script src="static/js/comentario.js"></script>
+<script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+
+<!--Los scripts los ponemos al final del archivo html-->
+<!--
+<script type="text/javascript" src="ruta del fichero js"/>
+
+var cad="Hola"
+Console.log(cad); -> salida por consola
+alert(cad) -> pestaña emergente que pone Hola
+
+for(var i=0; cad.lenght; i++){...}
+
+slice() 
+Para obtener un email
+var elemento = document.getElementById("id")
+Si hicieramos:
+Console.log(elemento) -> sacaría: input type ...
+//añadimosla funcion validate al event listener
+elemento.addEventListener("onClick", validate);
+definir una funcion:
+function namefuncion(parametros){...}
+hay que indicarle las palabras malsonantes que queramos
+var array[];
+var array = document.getElementByClass()
+-->
+
+{% endblock %}
+

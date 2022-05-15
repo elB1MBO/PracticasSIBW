@@ -1,0 +1,378 @@
+/*Producto*/
+/*Fuente de google para texto*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/*Fuente para titulo*/
+@font-face {
+    font-family: Cremona;
+    src: url(../font/Cremona\ Regular\ TTF.ttf);
+}
+/*para que sea responsive*/
+@media screen and (max-width:800px) {
+    footer{
+        width: 100%;
+        grid-template-columns: repeat((1,1fr));
+        grid-gap: 1px;
+    }
+}
+
+/* el caracter "*" sirve para establecerlo en todo el archivo*/
+*{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+/*Cuerpo*/
+body{
+    /*Fondo:*/
+    background-repeat: no-repeat;
+    background-image: url(https://latradiciondearriate.com/wp-content/uploads/2019/01/fondo-home-1.jpg);
+    background-size: cover;
+    background-position: center, center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+}
+
+/*Cabecera*/
+.header{
+    height: 20%;
+    width: 110%;
+    position: relative;
+    top: -1%;
+    left: -1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0%;
+    box-sizing: border-box;
+
+    background-color: rgba(150, 18, 18, 0.8);
+    
+    transition: 0.5s;
+}
+/*Contenedor logo*/
+.container-logo{
+    width: 20%;
+    height: 100%;
+    display: inline;
+
+    float: left;
+    padding-left: 2.5%;
+    align-items: center;
+}
+/*Logo*/
+.logo{
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    display: block;
+    object-fit: fill;
+    margin-left: 30%;
+}
+
+/*Contenedor titulo y menu*/
+.container-title-menu{
+    display: inline;
+    float: right;
+    width: 90%;
+    height: auto;
+    text-align: center;
+}
+.container-title-menu h1{
+    height: 20%;
+    font-family: Cremona;
+}
+.container-title-menu h2{
+    height: 20%;
+    margin-bottom: 0%;
+}
+/*Ttulo*/
+h1{
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: x-large;
+    padding: 5px;
+}
+/*Subtitulo*/
+h2{
+    font-size: medium;
+}
+h3{
+    font-size: small;
+}
+/*Menu*/
+.menu{
+    width: 100%;
+    height: auto;
+
+    cursor: pointer;
+    transition: 0.5s;
+
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.menu ul{
+    width: 100%;
+    height: 30%;
+    margin: 0;
+}
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+    
+    padding: 10px 60px;
+}
+.menu ul li:hover{
+    background-color: rgba(131, 23, 23, 0.5);
+    border-radius: 10px;
+}
+.menu ul li a{ /*Para cambiar solo la a en el li del ul*/
+    /*Para que no subraye ni cambie de color los links*/
+    text-decoration: none; 
+}
+
+/*Informacion*/
+.inicio{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/*Panel auxiliar desplegable*/
+.panel-auxiliar label[for="toggle"] {
+    font-size: 3rem;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+  }
+  
+.panel-auxiliar input[type="checkbox"] {
+    position: absolute;
+    top: -100px;
+    display: flex;
+}
+
+.panel-auxiliar aside {
+
+    background-color: rgba(168, 60, 60, 0.75);
+  
+    width: 20%;
+    height: 100%;
+    padding: 0 20px;
+  
+    position: fixed;
+    top: 0;
+    right: -30%;
+  
+    transition: 0.6s all;
+}
+aside h2{
+    height: auto;
+    margin-left: 5%;
+}
+aside p{
+    height: auto;
+    margin-left: 5%;
+}
+/*Diseño de las secciones de la lista ol*/
+aside ol li a{
+    font-style: italic;
+}
+
+/*Para que reciba el input y abra la pestaña auxiliar*/
+input[type=checkbox]:checked + aside {
+    right: 0px;
+}
+
+/*contenedor-principal*/
+.contenedor-principal{
+    display: grid;
+    grid-gap: 1rem;
+    margin: 2% 5%;
+    grid-auto-rows: minmax(100px, auto);
+    /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+    grid-template-columns: repeat(2, minmax(min(100%,25rem), 1fr));
+}
+/*Para ajustar el grid de las imagenes cuando se reduce la pantalla por debajo de 80 rem (aprox. 1300px)*/
+@media screen and (max-width: 80rem) {
+    .contenedor-principal{
+        display: grid;
+        grid-gap: 1rem;
+        grid-auto-rows: minmax(100px, auto);
+        /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+        grid-template-columns: repeat(auto-fill, minmax(min(100%,25rem), 1fr));
+    }
+}
+
+/*Texto principal*/
+.informacion{
+    /* padding-left: 2%;
+    padding-right: 2%; */
+    padding: 2%;
+    background-color: rgb(245, 245, 220);
+}
+.informacion h1{
+    color: black;
+    padding-left: 0%;
+}
+.informacion h2{
+    color: black;
+}
+.informacion p{
+    color: black;
+    text-align: justify;
+}
+.informacion a{
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/*Imagenes*/
+.imagenes{
+    height: 900px;
+
+    display: grid;
+    grid-gap: 1rem;
+    margin: 2% 5%;
+    /*funcion repeat con auto-fill ajusta como puede con un minimo y maximo de tamaño*/
+    grid-template-rows: repeat(2, minmax(min(100%,25rem), 1fr));
+}
+/*Para ajustar el grid de las imagenes cuando se reduce la pantalla por debajo de 80 rem (aprox. 1300px)*/
+@media screen and (max-width: 80rem) {
+    .imagenes{
+        display: grid;
+        grid-gap: 1rem;
+        /*funcion repeat con auto-fill como puede con un minimo y maximo de tamaño*/
+        grid-template-rows: repeat(auto-fill, minmax(min(100%,25rem), 1fr));
+    }
+}
+
+/*Destacar palabras importantes con span*/
+.critical-words{
+    font-weight: bold;
+    color: black;
+}
+
+/*Seccion de comentarios*/
+
+#container-comentarios{
+    display: none;
+    width: auto;
+}
+#container-comentarios .panel label{
+    color: black;
+}
+/*Cambiar de color el icono*/
+.icon-color{
+    color: black;
+}
+#container-comentarios form div label{
+    color: black;
+}
+#container-comentarios form input{
+    color: black;
+
+    width: 50%;
+}
+#container-comentarios form button{
+    color: black;
+    
+    margin-top: 1%;
+    padding: 1%;
+}
+#container-comentarios form div textarea{
+    color: black;
+    resize: none;
+    width: 50%;
+    height: 100px;
+}
+
+#container-comentarios ul{
+    display: flex;
+    flex-direction: column-reverse;
+    padding-right: 40px;
+    border: 1px black;
+}
+#container-comentarios ul li{
+    list-style: none;
+}
+
+#boton-mostrar{
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}
+#boton-enviar{
+    cursor: pointer;
+}
+
+/*Pie de pagina*/
+footer{
+    font-size: large;
+
+    background-color: rgba(150, 18, 18, 0.8);
+
+    position: relative;
+    left: -1%;
+
+    width: 110%;
+    height: 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-contenedor-texto{
+    width: 40%;
+    margin-left: 2%;
+    float: left;
+}
+.footer-contenedor-iconos{
+    width: 40%;
+    float: right;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-contenedor-iconos ul{
+    width: 100%;
+    height: 30%;
+    margin: 0;
+}
+.footer-contenedor-iconos ul li{
+    list-style: none;
+    display: inline-block;
+    
+    padding: 10px 60px;
+
+    margin-left: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.footer-contenedor-iconos ul li:hover{
+    background-color: rgba(131, 23, 23, 0.5);
+    border-radius: 10px;
+}
+.footer-contenedor-iconos ul li a{ /*Para cambiar solo la a en el li del ul*/
+    /*Para que no subraye ni cambie de color los links*/
+    text-decoration: none; 
+}
+
+.icon-style{
+    height: 25px;
+    width: 25px;
+    margin-left: 0%;
+    margin-top: 0%;
+}
+.icon-style:hover{
+    background-color: rgba(131, 23, 23, 0.5);
+}
