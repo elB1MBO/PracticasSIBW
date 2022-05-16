@@ -1,4 +1,4 @@
-/*Pagina inicio y registro*/
+/*Pagina del perfil del usuario*/
 /*Fuente de google para texto*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /*Fuente para titulo*/
@@ -81,138 +81,24 @@ body{
     overflow: hidden;
 }
 
-.botones{
-    width: 100%;
-    margin: auto;
-    position: relative;
-    box-shadow: 0 0 20px 9px rgba(230, 107, 59, 0.122);
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-between;
-}
 
-.toggle-button{
-    margin: 0 auto;
-    padding: 4% 5%;
-    background: transparent;
-    cursor: pointer;
-    border: 0;
-    outline: none; 
-    position: relative;
-    text-align: center;
-    font-size: large;
-}
-
-#graphic-button{
-    top: 0;
-    left: 0;
-    position: absolute;
+#foto-perfil{
     width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgb(196, 115, 115), rgb(184, 53, 53));
-    border-radius: 30px;
-    transition: .5s;
-}
-
-#container-content{
-    width: 100%;
-    height: 80%;
-    margin: 8% auto;
-    /* background-color: rgba(206, 65, 65, 0.4); */
+    height: 50%;
     position: relative;
+    clip-path: circle();
+    left: 25%;
 }
 
-.input-group{
-    width: 100%;
-    height: 80%;
-    margin: 10% auto;
-    position: absolute;
-    transition: .5s;
+.personal-data{
+    position: relative;
+    margin: 5% auto;
 }
 
-.input-group span{
-    margin: 3% 1% 3%;
-    font-size: small;
-    position: absolute;
+.data-label{
+    margin: 5% auto;
 }
 
-.input-field{
-    width: 100%;
-    padding: 5px 0;
-    margin: 5px 0;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid rgb(94, 92, 88);
-    background: transparent;
-}
-
-.submit-button{
-    width: 65%;
-    height: 13%;
-    padding: auto;
-    cursor: pointer;
-    display: block;
-    margin: 6% auto;
-    border: 0;
-    border-radius: 30px;
-    background: linear-gradient(to right, rgb(196, 115, 115), rgb(184, 53, 53));
-    font-size: large;
-}
-
-.check-box{
-    margin: 4% 1% 4%;
-}
-
-#register{
-    left: -150%;
-}
-
-
-/* 
-.hide{
-    max-height: 0 !important;
-}
-
-.dropdown{
-    border: 1px solid black;
-    width: 60%;
-    margin: 3% auto;
-    background: rgb(245, 245, 220);
-}
-
-.dropdown .title{
-    margin: 3px;
-    width: 100%;
-    cursor: pointer;
-}
-
-.dropdown .title .fa-angle-down{
-    float: right;
-    margin-top: 2%;
-    margin-right: 3%;
-    transition: transform .3s;
-}
-
-.dropdown .menu{
-    transition: max-height .5s ease-out;
-    max-height: 40%;
-    overflow: hidden;
-}
-
-.dropdown .menu .option{
-    margin: 2%;
-    cursor: pointer;
-}
-
-.dropdown .menu .option:hover{
-    background: rgb(196, 115, 115);
-}
-
-.rotate-90{
-    transform: rotate(180deg);
-}
-*/
 
 /*
 .info-users{
@@ -250,4 +136,3 @@ body{
     font-weight: bold;
     color: black;
 } */
-

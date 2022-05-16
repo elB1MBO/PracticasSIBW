@@ -6,5 +6,5 @@
 
     
 
-    echo $twig->render('login.html', []);
+    echo $twig->render('perfil.html', []);
 ?>

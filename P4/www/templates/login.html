@@ -5,10 +5,13 @@
 </head>
 
 <body>
-    <!--La página para iniciar sesión o registrarse no tendrá cabecera-->
     <!--Una flecha para volver a la pagina principal-->
-    <div class="back">
-        <a href="index.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+    <div class="header">
+        <div class="back">
+            <a href="index.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+        </div>
+
+        <img id="logo" src="static/image/logo nombre hor.png">
     </div>
 
     <div class="container-principal">
@@ -30,7 +33,35 @@
                 <input type="text" class="input-field" placeholder="Nombre de usuario" required>
                 <input type="text" class="input-field" placeholder="Correo electrónico" required>
                 <input type="text" class="input-field" placeholder="Contraseña" required>
-                <input type="checkbox" class="check-box"><span>Acepto los términos y condiciones.</span>
+                
+                <!-- <div class="dropdown">
+                    <div class="info-users">
+                        <span class="icono"><i class="fa-solid fa-circle-question"></i></span>
+                        <article>
+                            <p>Tipos de usuarios:</p>
+                            <p><span class="critical-words">Normal:</span> Podrá incluir comentarios en cada producto del sitio y cambiar sus 
+                                datos de usuario.</p>
+                            <p><span class="critical-words">Moderador:</span> Podrá editar / borrar comentarios.</p>
+                            <p><span class="critical-words">Gestor:</span> Podrá editar / borrar / añadir productos y etiquetas a los productos</p>
+                            <p><span class="critical-words">Superusuario:</span> Podrá realizar cualquier acción, incluyendo modificar los roles
+                                de los usuarios.
+                            </p>
+                        </article>
+                    </div>
+            
+                    <div class="title">Elige un tipo de usuario<i class="fa fa-angle-down"></i></div>
+            
+                    <div class="menu hide">
+                        <div class="option" id="normal">Usuario Normal</div>
+                        <div class="option" id="modificador">Usuario Modificador</div>
+                        <div class="option" id="gestor">Usuario Gestor</div>
+                        <div class="option" id="superusuario">SuperUsuario</div>
+                    </div>
+                </div> -->
+
+                
+
+                <!-- <input type="checkbox" class="check-box"><span>Acepto los términos y condiciones.</span> -->
                 <button type="submit" class="submit-button" id="login-button">Registrarse</button>
             </form>
         </section>
