@@ -18,23 +18,24 @@
         <img id="foto-perfil" src="static/image/profile/pan de molde.jpg">
 
         <div class="personal-data">
-            <label class="data-label">Nombre de usuario: (Icono lapiz){{ user['username'] }}</label><br/>
-            <label class="data-label">Email: {{ user['email'] }}</label><br/>
-            <label class="data-label">Permisos de usuario: (Icono info){{ user['email'] }}</label><br/>
+            <label class="data-label">Nombre de usuario: {{ usuario['nombre'] }} <i class="fa-solid fa-pencil"></i></label><br/>
+            <label class="data-label">Email: {{ usuario['email'] }}</label><br/>
+            <label class="data-label">Permisos de usuario: {{ usuario['tipo'] }}
+                <div class="info-users">
+                    <span class="icono"><i class="fa-solid fa-circle-question"></i></span>
+                    <article>
+                        <p><span class="critical-words">Normal:</span> Podrá incluir comentarios en cada producto del sitio y cambiar sus 
+                            datos de usuario.</p>
+                        <p><span class="critical-words">Moderador:</span> Podrá editar / borrar comentarios.</p>
+                        <p><span class="critical-words">Gestor:</span> Podrá editar / borrar / añadir productos y etiquetas a los productos</p>
+                        <p><span class="critical-words">Superusuario:</span> Podrá realizar cualquier acción, incluyendo modificar los roles
+                            de los usuarios.
+                        </p>
+                    </article>
+                </div>
+            </label><br/>
         </div>
-        <div class="info-users">
-            <span class="icono"><i class="fa-solid fa-circle-question"></i></span>
-            <article>
-                <p>Tipos de usuarios:</p>
-                <p><span class="critical-words">Normal:</span> Podrá incluir comentarios en cada producto del sitio y cambiar sus 
-                    datos de usuario.</p>
-                <p><span class="critical-words">Moderador:</span> Podrá editar / borrar comentarios.</p>
-                <p><span class="critical-words">Gestor:</span> Podrá editar / borrar / añadir productos y etiquetas a los productos</p>
-                <p><span class="critical-words">Superusuario:</span> Podrá realizar cualquier acción, incluyendo modificar los roles
-                    de los usuarios.
-                </p>
-            </article>
-        </div>
+        
 
 
     </div>

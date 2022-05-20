@@ -2,9 +2,11 @@
  * Script de la página de login y registro
  */
 
+//FUNCIONES CAMBIO INICIAR Y REGISTRARSE
 document.getElementById("toggle-login").addEventListener("click", setLogin);
 document.getElementById("toggle-register").addEventListener("click", setRegister);
-
+document.getElementById("eye-button").addEventListener("click", showHidePassLogin);
+document.getElementById("eye-button2").addEventListener("click", showHidePassReg);
 //Event listeners de las opciones
 
 function setLogin(){
@@ -27,6 +29,50 @@ function setRegister(){
     button.style.left = "50%";
 }
 
+//Mostrar/Ocultar contraseña
+function showHidePassLogin(){
+    var pass = document.getElementById("passwd");
+    var show = document.getElementById("show");
+    var hide = document.getElementById("hide");
+
+    //Si pulsa el ojo cuando está escondiendo la passw
+    if(hide.style.display === "block"){
+        hide.style.display = "none";
+        show.style.display = "block";
+        pass.type = "text";
+    } else {
+        hide.style.display = "block";
+        show.style.display = "none";
+        pass.type = "password";
+    }
+}
+
+function showHidePassReg(){
+    var pass = document.getElementById("passwd2");
+    var show = document.getElementById("show2");
+    var hide = document.getElementById("hide2");
+
+    //Si pulsa el ojo cuando está escondiendo la passw
+    if(hide.style.display === "block"){
+        hide.style.display = "none";
+        show.style.display = "block";
+        pass.type = "text";
+    } else {
+        hide.style.display = "block";
+        show.style.display = "none";
+        pass.type = "password";
+    }
+}
+
+//REGISTRARSE:
+document.getElementById("register-button").addEventListener("click", registerUser);
+
+function registerUser(){
+    
+}
+
+
+//Codigo para el dropdown menu
 /* 
 function toggleClass(elem, className){
     if(elem.className.indexOf(className) !== -1){

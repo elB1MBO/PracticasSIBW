@@ -24,31 +24,31 @@
         <!--Contenido-->
         <section id="container-content">
             <form class="input-group" id="login"> <!--Iniciar sesion-->
-                <input type="text" class="input-field" placeholder="Nombre de usuario" required>
-                <input type="text" class="input-field" placeholder="Contraseña" required>
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
+                <i class="fa-solid fa-key"></i>
+                <span class="eye" id="eye-button">   
+                    <i class="fa-solid fa-eye" id="show"></i>
+                    <i class="fa-solid fa-eye-slash" id="hide"></i>
+                </span>
+                <input type="password" id="passwd" class="input-field" placeholder="Contraseña" required>
+                <!-- <i class="fa-solid fa-eye-slash"></i> -->
                 <input type="checkbox" class="check-box"><span>Recuérdame</span>
                 <button type="submit" class="submit-button" id="login-button">Iniciar sesión</button>
             </form>
             <form class="input-group" id="register"> <!--Registrarse-->
-                <input type="text" class="input-field" placeholder="Nombre de usuario" required>
-                <input type="text" class="input-field" placeholder="Correo electrónico" required>
-                <input type="text" class="input-field" placeholder="Contraseña" required>
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" id="email" class="input-field" placeholder="Correo electrónico" required>
+                <i class="fa-solid fa-key"></i>
+                <span class="eye" id="eye-button2">   
+                    <i class="fa-solid fa-eye" id="show2"></i>
+                    <i class="fa-solid fa-eye-slash" id="hide2"></i>
+                </span>
+                <input type="password" id="passwd2" class="input-field" placeholder="Contraseña" required>
                 
                 <!-- <div class="dropdown">
-                    <div class="info-users">
-                        <span class="icono"><i class="fa-solid fa-circle-question"></i></span>
-                        <article>
-                            <p>Tipos de usuarios:</p>
-                            <p><span class="critical-words">Normal:</span> Podrá incluir comentarios en cada producto del sitio y cambiar sus 
-                                datos de usuario.</p>
-                            <p><span class="critical-words">Moderador:</span> Podrá editar / borrar comentarios.</p>
-                            <p><span class="critical-words">Gestor:</span> Podrá editar / borrar / añadir productos y etiquetas a los productos</p>
-                            <p><span class="critical-words">Superusuario:</span> Podrá realizar cualquier acción, incluyendo modificar los roles
-                                de los usuarios.
-                            </p>
-                        </article>
-                    </div>
-            
                     <div class="title">Elige un tipo de usuario<i class="fa fa-angle-down"></i></div>
             
                     <div class="menu hide">
@@ -59,10 +59,8 @@
                     </div>
                 </div> -->
 
-                
-
                 <!-- <input type="checkbox" class="check-box"><span>Acepto los términos y condiciones.</span> -->
-                <button type="submit" class="submit-button" id="login-button">Registrarse</button>
+                <button type="submit" class="submit-button" id="register-button">Registrarse</button>
             </form>
         </section>
     </div>
