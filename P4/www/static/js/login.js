@@ -29,6 +29,15 @@ function setRegister(){
     button.style.left = "50%";
 }
 
+
+//Comprobar el email
+function validarEmail(email) {
+    //La expresión sería: /^ nombre de usuario @ servidor . dominio
+    var expr = /^\w+([\.-]?\w+)*@(?:|hotmail|outlook|correo|go|gmail|ugr)*(\.(?:|com|es|ugr))+$/;
+
+    return expresión.test(email);
+}
+
 //Mostrar/Ocultar contraseña
 function showHidePassLogin(){
     var pass = document.getElementById("passwd");
@@ -66,10 +75,18 @@ function showHidePassReg(){
 
 //REGISTRARSE:
 document.getElementById("register-button").addEventListener("click", registerUser);
+//Cuando se pulse el boton de registrarse, quiero que el boton llame a la funcion de php
+/* function registerUser(){
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", "login.php", true);
+    ajax.send();
 
-function registerUser(){
-    
-}
+    ajax.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+
+        }
+    }
+} */
 
 
 //Codigo para el dropdown menu

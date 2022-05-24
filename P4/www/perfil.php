@@ -1,5 +1,6 @@
 <?php
     require_once "/usr/local/lib/php/vendor/autoload.php";
+    include_once "connect.php";
 
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $twig = new \Twig\Environment($loader);
@@ -8,7 +9,7 @@
 
     //$name = ; Habra que pasarle a este php el nombre del usuario que se ha identificado en login
 
-    $stmt = $mysqli->prepare("SELECT * FROM usuarios WHERE user_id = '$name'");
+    $stmt = $mysqli->prepare("SELECT * FROM usuarios WHERE user_id = ?");
     $stmt->bind_param("s", $name);
     $stmt->execute();
 

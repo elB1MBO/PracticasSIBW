@@ -161,6 +161,7 @@ body{
     position: absolute;
     margin-left: 95%;
     margin-top: 3%;
+    cursor: pointer;
 }
 #show, #show2{
     display: none;

@@ -23,30 +23,30 @@
         </div>
         <!--Contenido-->
         <section id="container-content">
-            <form class="input-group" id="login"> <!--Iniciar sesion-->
+            <form class="input-group" id="login" action="login.php" method="post"> <!--Iniciar sesion-->
                 <i class="fa-solid fa-user"></i>
-                <input type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
+                <input name="usernameL" type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
                 <i class="fa-solid fa-key"></i>
                 <span class="eye" id="eye-button">   
                     <i class="fa-solid fa-eye" id="show"></i>
                     <i class="fa-solid fa-eye-slash" id="hide"></i>
                 </span>
-                <input type="password" id="passwd" class="input-field" placeholder="Contraseña" required>
+                <input name="passwdL" type="password" id="passwd" class="input-field" placeholder="Contraseña" required>
                 <!-- <i class="fa-solid fa-eye-slash"></i> -->
                 <input type="checkbox" class="check-box"><span>Recuérdame</span>
                 <button type="submit" class="submit-button" id="login-button">Iniciar sesión</button>
             </form>
-            <form class="input-group" id="register"> <!--Registrarse-->
+            <form class="input-group" id="register" action="login.php" method="post"> <!--Registrarse-->
                 <i class="fa-solid fa-user"></i>
-                <input type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
+                <input name="usernameR" type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
                 <i class="fa-solid fa-envelope"></i>
-                <input type="text" id="email" class="input-field" placeholder="Correo electrónico" required>
+                <input name="email" type="text" id="email" class="input-field" placeholder="Correo electrónico" required>
                 <i class="fa-solid fa-key"></i>
                 <span class="eye" id="eye-button2">   
                     <i class="fa-solid fa-eye" id="show2"></i>
                     <i class="fa-solid fa-eye-slash" id="hide2"></i>
                 </span>
-                <input type="password" id="passwd2" class="input-field" placeholder="Contraseña" required>
+                <input name="passwdR" type="password" id="passwd2" class="input-field" placeholder="Contraseña" required>
                 
                 <!-- <div class="dropdown">
                     <div class="title">Elige un tipo de usuario<i class="fa fa-angle-down"></i></div>
