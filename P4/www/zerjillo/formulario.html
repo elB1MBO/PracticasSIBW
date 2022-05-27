@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Ejemplo de formulario para subir ficheros</title>
+    </head>
+    <body>
+        {% for e in errores %}
+            <p style="color: #f00;">{{e}}</p>
+        {% endfor %}
+
+        {% if imagen %}
+            <p>La imagen está guardada en <a href="{{imagen}}">{{imagen}}</a></p>
+            <img src="{{imagen}}"/> 
+        {% else %}
+            {#Fundamental: Añadir enctype="multipart/form-data" a la etiqueta <form> #}
+            <form action="formulario.php" method="post" enctype="multipart/form-data">
+                Imagen a subir: <input type="file" name="imagen"/><br>
+                <input type="submit" value="mandar imagen"/>
+            </form>
+        {% endif %}
+    </body>
+</html>

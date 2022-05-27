@@ -1,11 +1,26 @@
 <?php
     require_once "/usr/local/lib/php/vendor/autoload.php";
     include_once "connect.php";
+    include_once "bdUsuarios.php";
 
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $twig = new \Twig\Environment($loader);
 
-    $mysqli = conectar();
+    $bdUs = new bdUsuarios();
+    $mysqli = $bdUs->getMysqli();
+
+    //Comprobamos si el usuario ha iniciado sesion 
+    session_start();
+
+    $usuario = array();
+
+    if(isset($_SESSION["nombreUsuario"])){
+        $usuario = $bdUs->getUsuario($_SESSION["nombreUsuario"]);
+    }
+
+    echo $twig->render('perfil.html', ['usuario' => $usuario]);
+
+    /* $mysqli = conectar();
 
     //$name = ; Habra que pasarle a este php el nombre del usuario que se ha identificado en login
 
@@ -17,13 +32,13 @@
     if ($res->num_rows>0){
         $row = $res->fetch_assoc();
         //echo $row['imagen'];
-        $usuario = array('nombre' => $row['user_id'], 'pass' => $row['password'], 
+        $usuario = array('nombre' => $row['username'], 'pass' => $row['password'], 
         'email' => $row['email'], 'tipo' => $row['tipo']);
     }
 
     //Cerramos conexion con la base de datos
-    desconectar($mysqli);
+    desconectar($mysqli); */
     
 
-    echo $twig->render('perfil.html', ['usuario' => $usuario]);
+    
 ?>

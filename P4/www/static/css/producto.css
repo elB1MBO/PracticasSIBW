@@ -304,6 +304,12 @@ input[type=checkbox]:checked + aside {
 #container-comentarios ul li{
     list-style: none;
 }
+#container-comentarios ul li label{
+    color: black;
+}
+#container-comentarios ul li hr{
+    border: 1px solid black;
+}
 
 #boton-mostrar{
     cursor: pointer;

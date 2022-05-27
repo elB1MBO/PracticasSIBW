@@ -35,7 +35,17 @@
                 </form>
 
                 <ul id="lista-comentarios">
-                
+                    {% if comentarios %}
+                        {% for comment in comentarios %}
+                            <li class="comentario" id="next">
+                                <label>{{comment.nombre}}</label><br>
+                                <label>{{comment.email}}</label><br>
+                                <label>{{comment.fecha}}</label><br>
+                                <hr>
+                                <p>{{comment.comentario}}</p>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </section>
 

@@ -43,6 +43,12 @@
         <input type="checkbox" id="toggle">
         <aside>
             <h2>Información</h2>
+            {% if not user %}
+                <p><a href="login.php">Iniciar sesión</a></p>
+            {% else %}
+                <p>Usuario: {{ user.name }}</p>
+                <p>Tipo de usuario: {{ user.tipo }}</p>
+            {% endif %}
             <p>Profundiza en nuestras raíces:</p>
             <!--Cambiar y poner el color y fuente en el css-->
             <ol>

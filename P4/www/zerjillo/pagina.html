@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Página que reconoce si el user está logeado o no.</title>
+    </head>
+    <body>
+        {% if not user %}
+            <p>NO estás logeado. <a href="loginPrueba.php">Logeate anda</a></p>
+        {% else %}
+            <p>SÍ estás logeado. Tu nick es <strong>{{user.nick}}</strong></p>
+    
+            {% if user.super %}
+                <p>Además, eres un superusuario.</p>
+            {% endif %}
+            <p><a href="logout.php">Cerrar sesión</a></p>
+            {% endif %}
+    </body>
+</html>
