@@ -136,3 +136,20 @@ article{
     font-weight: bold;
     color: black;
 }
+
+.logout-button{
+    width: 65%;
+    height: 13%;
+    padding: auto;
+    cursor: pointer;
+    display: block;
+    margin: 6% auto;
+    border: 0;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(196, 115, 115), rgb(184, 53, 53));
+    font-size: large;
+}
+
+.logout-button a{
+    text-decoration: none;
+}
