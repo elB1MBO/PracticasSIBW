@@ -18,27 +18,17 @@
         $usuario = $bdUs->getUsuario($_SESSION["nombreUsuario"]);
     }
 
-    echo $twig->render('perfil.html', ['usuario' => $usuario]);
+    //Si el usuario desea cambiar su nombre de usuario (que NO es su id)
+    $nombre = $usuario['username'];
+    $nuevoNombre = $_POST['nuevoNombre'];
 
-    /* $mysqli = conectar();
-
-    //$name = ; Habra que pasarle a este php el nombre del usuario que se ha identificado en login
-
-    $stmt = $mysqli->prepare("SELECT * FROM usuarios WHERE user_id = ?");
-    $stmt->bind_param("s", $name);
-    $stmt->execute();
-
-    $res = $stmt->get_result();
-    if ($res->num_rows>0){
-        $row = $res->fetch_assoc();
-        //echo $row['imagen'];
-        $usuario = array('nombre' => $row['username'], 'pass' => $row['password'], 
-        'email' => $row['email'], 'tipo' => $row['tipo']);
+    if($nuevoNombre != null){
+        if($bdUs->getUsuario($_SESSION["nombreUsuario"] != null)){
+            $bdUs->cambiarNombre($nombre, $nuevoNombre);
+            $_SESSION['nombreUsuario'] = $nuevoNombre;
+        }
     }
 
-    //Cerramos conexion con la base de datos
-    desconectar($mysqli); */
-    
-
+    echo $twig->render('perfil.html', ['usuario' => $usuario]);
     
 ?>

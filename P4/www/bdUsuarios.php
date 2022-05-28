@@ -65,8 +65,10 @@
         }
 
         function cambiarPass($pass, $nuevaPass){
+            $hash = password_hash($nuevaPass, PASSWORD_DEFAULT);
+
             $stmt = $this->mysqli->prepare("UPDATE usuarios SET password=? WHERE password=?");
-            $stmt->bind_param("ss", $nuevaPass, $pass);
+            $stmt->bind_param("ss", $hash, $pass);
             $stmt->execute();
         }
 

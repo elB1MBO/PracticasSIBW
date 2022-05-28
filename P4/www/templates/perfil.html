@@ -14,25 +14,38 @@
         <img id="logo" src="static/image/logo nombre hor.png">
     </div>
 
+    <div class="info-users" id="div-info-users">
+        <article>
+            <h1>Tipos de usuarios</h1>
+            <p><span class="critical-words">Normal:</span> Podrá incluir comentarios en cada producto del sitio y cambiar sus 
+                datos de usuario.</p>
+            <p><span class="critical-words">Moderador:</span> Podrá editar / borrar comentarios.</p>
+            <p><span class="critical-words">Gestor:</span> Podrá editar / borrar / añadir productos y etiquetas a los productos</p>
+            <p><span class="critical-words">Superusuario:</span> Podrá realizar cualquier acción, incluyendo modificar los roles
+                de los usuarios.
+            </p>
+        </article>
+    </div>
+
+    <div class="fondo-cambiar-nombre" id="fondo-nombre">
+        <div class="container-cambiar-nombre" id="caja-nuevo-nombre">
+            <form action="perfil.php" method="post" class="form-popup">
+                <h3>Introduce tu nuevo nombre:</h3>
+                <input name="name" type="text" id="new-username" class="input-field" placeholder="{{usuario['username']}}"><br>
+                <button type="submit" value="cambiar" class="change-name-button" id="boton-cambiar-nombre">Cambiar nombre</button>
+                <button type="submit" value="cancelar" id="boton-cancelar-nombre">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
     <div class="container-principal">
         <img id="foto-perfil" src="static/image/profile/pan de molde.jpg">
 
         <div class="personal-data">
-            <label class="data-label">Nombre de usuario: {{ usuario['username'] }} <i class="fa-solid fa-pencil"></i></label><br/>
+            <label class="data-label">Nombre de usuario: {{ usuario['username'] }} <span class="icono-lapiz"><i class="fa-solid fa-pencil" id="lapiz"></i></span></label><br/>
             <label class="data-label">Email: {{ usuario['email'] }}</label><br/>
             <label class="data-label">Permisos de usuario: {{ usuario['tipo'] }}
-                <div class="info-users">
-                    <span class="icono"><i class="fa-solid fa-circle-question"></i></span>
-                    <article>
-                        <p><span class="critical-words">Normal:</span> Podrá incluir comentarios en cada producto del sitio y cambiar sus 
-                            datos de usuario.</p>
-                        <p><span class="critical-words">Moderador:</span> Podrá editar / borrar comentarios.</p>
-                        <p><span class="critical-words">Gestor:</span> Podrá editar / borrar / añadir productos y etiquetas a los productos</p>
-                        <p><span class="critical-words">Superusuario:</span> Podrá realizar cualquier acción, incluyendo modificar los roles
-                            de los usuarios.
-                        </p>
-                    </article>
-                </div>
+            <span class="icono" id="icono-info"><i class="fa-solid fa-circle-question"></i></span>
             </label><br/>
         </div>
 
