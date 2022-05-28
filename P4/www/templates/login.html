@@ -25,20 +25,21 @@
         </div>
         <!--Contenido-->
         <section id="container-content">
-            <form class="input-group" id="login" action="login.php" method="post"> <!--Iniciar sesion-->
+            <!--Iniciar sesion-->
+            <form class="input-group" id="login" action="login.php" method="post"> 
                 <i class="fa-solid fa-user"></i>
-                <input name="usernameL" type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
+                <input name="name" type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
                 <i class="fa-solid fa-key"></i>
                 <span class="eye" id="eye-button">   
                     <i class="fa-solid fa-eye" id="show"></i>
                     <i class="fa-solid fa-eye-slash" id="hide"></i>
                 </span>
-                <input name="passwdL" type="password" id="passwd" class="input-field" placeholder="Contraseña" required>
-                <!-- <i class="fa-solid fa-eye-slash"></i> -->
-                <input type="checkbox" class="check-box"><span>Recuérdame</span>
-                <button type="submit" class="submit-button" id="login-button">Iniciar sesión</button>
+                <input name="pass" type="password" id="passwd" class="input-field" placeholder="Contraseña" required>
+                <!-- <input type="checkbox" class="check-box"><span>Recuérdame</span> -->
+                <button type="submit" value="Iniciar Sesión" class="submit-button" id="login-button">Iniciar sesión</button>
             </form>
-            <form class="input-group" id="register" action="login.php" method="post"> <!--Registrarse-->
+            <!--Registrarse-->
+            <form class="input-group" id="register" action="register.php" method="post"> 
                 <i class="fa-solid fa-user"></i>
                 <input name="usernameR" type="text" id="username" class="input-field" placeholder="Nombre de usuario" required>
                 <i class="fa-solid fa-envelope"></i>
@@ -49,19 +50,6 @@
                     <i class="fa-solid fa-eye-slash" id="hide2"></i>
                 </span>
                 <input name="passwdR" type="password" id="passwd2" class="input-field" placeholder="Contraseña" required>
-                
-                <!-- <div class="dropdown">
-                    <div class="title">Elige un tipo de usuario<i class="fa fa-angle-down"></i></div>
-            
-                    <div class="menu hide">
-                        <div class="option" id="normal">Usuario Normal</div>
-                        <div class="option" id="modificador">Usuario Modificador</div>
-                        <div class="option" id="gestor">Usuario Gestor</div>
-                        <div class="option" id="superusuario">SuperUsuario</div>
-                    </div>
-                </div> -->
-
-                <!-- <input type="checkbox" class="check-box"><span>Acepto los términos y condiciones.</span> -->
                 <button type="submit" class="submit-button" id="register-button">Registrarse</button>
             </form>
         </section>

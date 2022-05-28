@@ -22,11 +22,12 @@
 
             $pass_hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $stmt = $this->mysqli->prepare("INSERT INTO usuarios (user_id, password, email, tipo) 
-                    VALUES (?, ?, ?, ?)"); //Por defecto, se registran como usuario normal.
-            $stmt->bind_param("ssss", $nombre, $pass_hash, $email, $tipo);
+            $stmt = $this->mysqli->prepare("INSERT INTO usuarios (user_id, password, email, tipo, username) 
+                    VALUES (?, ?, ?, ?, ?)"); //Por defecto, se registran como usuario normal.
+            $stmt->bind_param("sssss", $nombre, $pass_hash, $email, $tipo, $nombre);
             $stmt->execute();
-            alert_message("Usuario registrado con éxito");
+
+            //$sql = "INSERT INTO `usuarios` (`user_id`, `password`, `email`, `tipo`, `username`) VALUES ($nombre, $pass_hash, $email, $tipo, $nombre) ";
         }
 
         function getUsuario($nombre){

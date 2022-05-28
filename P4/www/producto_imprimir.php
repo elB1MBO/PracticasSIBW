@@ -5,8 +5,7 @@
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $twig = new \Twig\Environment($loader);
 
-    $nombreProducto = "Producto por defecto";
-    $precioProducto = "0€";
+    $bd = new bd();
 
     if(isset($_GET['pr'])){
         $idPr = $_GET['pr'];
@@ -14,7 +13,10 @@
         $idPr = -1;
     }
 
-    $producto = getProducto($idPr);
+    $producto = $bd->getProducto($idPr);
+    $producto = $bd->getProducto($idPr);
+    $imagenes = $bd->getImages($idPr);
+    $comentarios = $bd->getComentarios($idPr);
     //$imagen = getImage($idPrid);
-    echo $twig->render('producto_imprimir.html', ['producto' => $producto]);
+    echo $twig->render('producto_imprimir.html', ['producto' => $producto, 'imagenes' => $imagenes, 'comentarios' => $comentarios]);
 ?>

@@ -35,7 +35,7 @@ function validarEmail(email) {
     //La expresión sería: /^ nombre de usuario @ servidor . dominio
     var expr = /^\w+([\.-]?\w+)*@(?:|hotmail|outlook|correo|go|gmail|ugr)*(\.(?:|com|es|ugr))+$/;
 
-    return expresión.test(email);
+    return expr.test(email);
 }
 
 //Mostrar/Ocultar contraseña

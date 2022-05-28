@@ -6,7 +6,7 @@ const id = document.getElementById("container-comentarios");
 //Listener del botón de comentario:
 document.getElementById("boton-mostrar").addEventListener('click', setDisplay);
 var firstTime = true;
-//document.getElementById("boton-mostrar").addEventListener('click', getComments);
+document.getElementById("boton-mostrar").addEventListener('click', getComments);
 //Cuando se escribe una palabrota, llama a la función que censura
 document.getElementById("comment").addEventListener('keypress', censurarPalabras);
 //Listener del boton de enviar

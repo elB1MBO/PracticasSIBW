@@ -32,6 +32,17 @@
     
             return $producto;
         }
+        
+        //Devuelve todos los eventos
+        function getProductos(){
+            $productos_tabla = $this->mysqli->query("SELECT * FROM productos");
+            $productos = array();
+
+            while($producto = $productos_tabla->fetch_assoc()){
+                $productos[] = $producto;
+            }
+            return $productos;
+        }
 
         //Devuelve la imagen correspondiente al producto con el id pasado como argumento
         function getImages($idPr){
@@ -48,6 +59,17 @@
             }
 
             return $imagen;
+        }
+
+        //Devuelve todas las imagenes de la tabla
+        function getAllImages(){
+            $imagenes_tabla = $this->mysqli->query("SELECT * FROM imagenes");
+            $imagenes = array();
+
+            while($img = $imagenes_tabla->fetch_assoc()){
+                $imagenes[] = $img;
+            }
+            return $imagenes;
         }
 
         function getComment($idPr){

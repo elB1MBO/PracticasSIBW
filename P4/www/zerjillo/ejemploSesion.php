@@ -8,7 +8,7 @@
     session_start(); 
     /**
      * session_start comprueba si se ha inicializado una sesión con anteriordad
-     * En caso afirmativo, rellena la variable $_SESSION ocn la info que tenía.
+     * En caso afirmativo, rellena la variable $_SESSION con la info que tenía.
      * Mira en la cabecera si está la cookie con la sesión del usuario.
     */
 

@@ -31,7 +31,11 @@
                         <a href="producto_imprimir.php?pr=1">Imprimir</a>
                     </li>
                     <li class="Iniciar sesion">
-                        <a href="login.php">Mi Perfil</a>
+                        {% if not usuario %}
+                            <a href="login.php">Iniciar sesión/Registrarse</a>
+                        {% else %}
+                            <a href="perfil.php">Mi Perfil</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
@@ -43,12 +47,16 @@
         <input type="checkbox" id="toggle">
         <aside>
             <h2>Información</h2>
-            {% if not user %}
-                <p><a href="login.php">Iniciar sesión</a></p>
+            {% if not usuario %}
+                <p>No estás logeado. <a href="login.php">Inicia sesión.</a></p>
             {% else %}
-                <p>Usuario: {{ user.name }}</p>
-                <p>Tipo de usuario: {{ user.tipo }}</p>
+                <p>Bienvenido, <strong>{{usuario.username}}</strong></p>
+                <p>Tipo de usuario: {{usuario.tipo}}</p>
+                <p><a href="logout.php">Cerrar sesión</a></p>
             {% endif %}
+            {% block user %}
+
+            {% endblock %}
             <p>Profundiza en nuestras raíces:</p>
             <!--Cambiar y poner el color y fuente en el css-->
             <ol>
