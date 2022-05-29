@@ -29,6 +29,6 @@
     $comentarios = $bd->getComentarios($idPr);
     $palabrotas = $bd->getBadWords();
 
-    echo $twig->render('producto.html', ['producto' => $producto, 'imagenes' => $imagenes, 'comentarios' => $comentarios]);
+    echo $twig->render('producto.html', ['usuario' => $usuario, 'producto' => $producto, 'imagenes' => $imagenes, 'comentarios' => $comentarios]);
 
 ?>

@@ -18,21 +18,24 @@
                 <i class="fa-regular fa-comment-dots icon-color fa-5x"></i>
             </button>
             <section id="container-comentarios">
-                <form> <!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
-                    <div class="container-name">
-                        <label>Nombre:</label><br>
-                        <input class="name-input" type="text" id="name">
-                    </div>
-                    <div class="container-email">
-                        <label>E-mail:</label><br>
-                        <input class="email-input" type="email" id="email">
-                    </div>
-                    <div class="container-comment">
-                        <label>Comentario:</label><br>
-                        <textarea id="comment" class="comment-box"></textarea>
-                    </div>
-                    <button type="button" id="boton-enviar">Enviar</button>
-                </form>
+                <!--Si el usuario es un usuario anónimo, no podrá ver el formulario para escribir un comentario-->
+                {% if usuario %}
+                    <form> <!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
+                        <div class="container-name">
+                            <label>Nombre:</label><br>
+                            <input class="name-input" type="text" id="name">
+                        </div>
+                        <div class="container-email">
+                            <label>E-mail:</label><br>
+                            <input class="email-input" type="email" id="email">
+                        </div>
+                        <div class="container-comment">
+                            <label>Comentario:</label><br>
+                            <textarea id="comment" class="comment-box"></textarea>
+                        </div>
+                        <button type="button" id="boton-enviar">Enviar</button>
+                    </form>
+                {% endif %}
 
                 <ul id="lista-comentarios">
                     <!-- {% if comentarios %}

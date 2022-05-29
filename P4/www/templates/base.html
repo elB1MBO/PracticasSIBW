@@ -52,6 +52,9 @@
             {% else %}
                 <p>Bienvenido, <strong>{{usuario.username}}</strong></p>
                 <p>Tipo de usuario: {{usuario.tipo}}</p>
+                {% if usuario.tipo == "super" %}
+                <p><a href="gestionUsuarios.php">Gestionar Usuarios</a></p>
+                {% endif %}
                 <p><a href="logout.php">Cerrar sesión</a></p>
             {% endif %}
             {% block user %}

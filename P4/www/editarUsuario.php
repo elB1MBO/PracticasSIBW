@@ -13,25 +13,24 @@
 
     $usuario = array();
 
-    
     if(isset($_SESSION["nombreUsuario"])){
         $usuario = $bdUs->getUsuario($_SESSION["nombreUsuario"]);
     }
 
     //Si el usuario desea cambiar su nombre de usuario (que NO es su id)
-    if($_SERVER['REQUEST_METHOD'] === "POST"){
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $id = $usuario['user_id'];
         $nuevoNombre = $_POST['nuevoNombre'];
+        $nuevoEmail = $POST['nuevoEmail'];
         if($nuevoNombre != null){
-            if($bdUs->getUsuario($_SESSION["nombreUsuario"] != null)){
-                $bdUs->cambiarNombre($id, $nuevoNombre);
-                $_SESSION['nombreUsuario'] = $nuevoNombre;
-            }
+            $bdUs->cambiarNombre($id, $nuevoNombre);
+            $_SESSION['nombreUsuario'] = $nuevoNombre;
+        } else if($nuevoEmail != null){
+            $bdUs->cambiarEmail($id, $nuevoEmail);
         }
         header("Location: perfil.php", true);
         exit();
     }
-    
 
     echo $twig->render('perfil.html', ['usuario' => $usuario]);
 

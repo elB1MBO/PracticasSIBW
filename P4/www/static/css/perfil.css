@@ -24,6 +24,7 @@
 body{
     height: 100%;
     width: 100%;
+    margin-left: 0%;
     background-image: linear-gradient(rgba(71, 67, 57, 0.4),rgba(165, 146, 117, 0.4)),
     url(https://ep01.epimg.net/politica/imagenes/2017/11/13/diario_de_espana/1510567236_342790_1510567390_noticia_normal.jpg);
     background-position: center;
@@ -123,11 +124,12 @@ article{
 }
 
 /*para editar el nombre*/
-.icono-lapiz{
+#edit-nombre, #edit-email{
+    cursor: pointer;
     margin-left: 10%;
 }
 
-#fondo-nombre{
+#container-editar-nombre, #container-editar-email{
     position: fixed;
     top: 0;
     left: 0;
@@ -141,8 +143,8 @@ article{
     align-items: center;
 }
 
-.container-cambiar-nombre{
-    width: 30%;
+.caja-cambiar-nombre, .caja-cambiar-email{
+    width: 40%;
     min-width: 20%;
     height: 30%;
     min-height: 20%;
@@ -157,8 +159,6 @@ article{
 .form-popup button{
     margin-top: 5%;
 }
-
-
 
 .icono{
     font-size: large;

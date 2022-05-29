@@ -26,14 +26,25 @@
             </p>
         </article>
     </div>
-
-    <div class="fondo-cambiar-nombre" id="fondo-nombre">
-        <div class="container-cambiar-nombre" id="caja-nuevo-nombre">
-            <form action="perfil.php" method="post" class="form-popup">
-                <h3>Introduce tu nuevo nombre:</h3>
-                <input name="name" type="text" id="new-username" class="input-field" placeholder="{{usuario['username']}}"><br>
+    <!--Ventana de edicion del nombre-->
+    <div class="fondo-cambiar-nombre" id="container-editar-nombre">
+        <div class="caja-cambiar-nombre" id="caja-nuevo-nombre">
+            <h3>Introduce tu nuevo nombre:</h3>
+            <form action="editarUsuario.php" method="post" class="form-popup">
+                <input name="nuevoNombre" type="text" id="new-username" class="input-field" placeholder="{{usuario['username']}}"><br>
                 <button type="submit" value="cambiar" class="change-name-button" id="boton-cambiar-nombre">Cambiar nombre</button>
-                <button type="submit" value="cancelar" id="boton-cancelar-nombre">Cancelar</button>
+                <button type="reset" value="cancelar" id="boton-cancelar-nombre">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    <!--Ventana de edicion del email-->
+    <div class="fondo-cambiar-email" id="container-editar-email">
+        <div class="caja-cambiar-email" id="caja-nuevo-email">
+            <h3>Introduce tu nuevo email:</h3>
+            <form action="editarUsuario.php" method="post" class="form-popup">
+                <input name="nuevoEmail" type="text" id="new-email" class="input-field" placeholder="{{usuario['email']}}"><br>
+                <button type="submit" value="cambiar" class="change-email-button" id="boton-cambiar-email">Cambiar email</button>
+                <button type="reset" value="cancelar" id="boton-cancelar-email">Cancelar</button>
             </form>
         </div>
     </div>
@@ -42,8 +53,12 @@
         <img id="foto-perfil" src="static/image/profile/pan de molde.jpg">
 
         <div class="personal-data">
-            <label class="data-label">Nombre de usuario: {{ usuario['username'] }} <span class="icono-lapiz"><i class="fa-solid fa-pencil" id="lapiz"></i></span></label><br/>
-            <label class="data-label">Email: {{ usuario['email'] }}</label><br/>
+            <label class="data-label">Nombre de usuario: {{ usuario['username'] }} 
+                <span id="edit-nombre"><i class="fa-solid fa-pencil" id="lapiz"></i></span>
+            </label><br/>
+            <label class="data-label">Email: {{ usuario['email'] }}
+                <span id="edit-email"><i class="fa-solid fa-pencil" id="lapiz"></i></span>
+            </label><br/>
             <label class="data-label">Permisos de usuario: {{ usuario['tipo'] }}
             <span class="icono" id="icono-info"><i class="fa-solid fa-circle-question"></i></span>
             </label><br/>

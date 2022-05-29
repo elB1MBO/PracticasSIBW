@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <!--Pagina de gestion de usuarios-->
+        <link rel="stylesheet" href="static/css/gestionUsuarios.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="back">
+                <a href="index.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+            </div>
+            <!-- <div class="container-logo">
+                <a href="index.php" alt="Logo"><img id="logo" src="static/image/logo nombre hor.png"></a>
+            </div> -->
+            <img id="logo" src="static/image/logo nombre hor.png">
+        </div>
+        <h1>Gestionar Usuarios</h1>
+        <h2>Superusuario: {{usuario['username']}}</h2>
+        <i id="edit-icon" class="fa-solid fa-pen-to-square"></i>
+        <div class="container-usuarios">
+            <h3>Tabla de Usuarios:</h3>
+            <table id="usuarios">
+                <thead>
+                    <tr>
+                        <th>Id usuario</th>
+                        <th>Nombre usuario</th>
+                        <th>Email</th>
+                        <th>Tipo</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i, user in usuarios %}
+                        <tr id="{{user['user_id']}}">
+                            <td>{{user['user_id']}}</td>
+                            <td>{{user['username']}}</td>
+                            <td>{{user['email']}}</td>
+                            <td>{{user['tipo']}}</td>
+                            <td><i id="edit-icon{{i}}" class="fa-solid fa-pen-to-square"></i></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <script src="static/js/gestionUsuarios.js"></script>
+    <script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+</html>

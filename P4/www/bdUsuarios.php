@@ -58,23 +58,23 @@
             return false;
         }
 
-        function cambiarNombre($nombre, $nuevoNombre){
-            $stmt = $this->mysqli->prepare("UPDATE usuarios SET username=? WHERE username=?");
-            $stmt->bind_param("ss", $nuevoNombre, $nombre);
+        function cambiarNombre($id, $nuevoNombre){
+            $stmt = $this->mysqli->prepare("UPDATE usuarios SET username = ? WHERE usuarios.user_id = ?");
+            $stmt->bind_param("ss", $nuevoNombre, $id);
             $stmt->execute();
         }
 
-        function cambiarPass($pass, $nuevaPass){
+        function cambiarPass($id, $nuevaPass){
             $hash = password_hash($nuevaPass, PASSWORD_DEFAULT);
 
-            $stmt = $this->mysqli->prepare("UPDATE usuarios SET password=? WHERE password=?");
-            $stmt->bind_param("ss", $hash, $pass);
+            $stmt = $this->mysqli->prepare("UPDATE usuarios SET password=? WHERE usuarios.user_id=?");
+            $stmt->bind_param("ss", $hash, $id);
             $stmt->execute();
         }
 
-        function cambiarEmail($email, $nuevoEmail){
-            $stmt = $this->mysqli->prepare("UPDATE usuarios SET email=? WHERE email=?");
-            $stmt->bind_param("ss", $nuevoEmail, $email);
+        function cambiarEmail($id, $nuevoEmail){
+            $stmt = $this->mysqli->prepare("UPDATE usuarios SET email=? WHERE usuarios.user_id=?");
+            $stmt->bind_param("ss", $nuevoEmail, $id);
             $stmt->execute();
         }
 
