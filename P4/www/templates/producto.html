@@ -38,7 +38,7 @@
                 {% endif %}
 
                 <ul id="lista-comentarios">
-                    <!-- {% if comentarios %}
+                    {% if comentarios %}
                         {% for comment in comentarios %}
                             <li class="comentario" id="next">
                                 <label>{{comment.nombre}}</label><br>
@@ -46,9 +46,13 @@
                                 <label>{{comment.fecha}}</label><br>
                                 <hr>
                                 <p>{{comment.comentario}}</p>
+                                {% if usuario.tipo == "moderador" %}
+                                    <button type="button" id="boton-editar">Editar comentario</button>
+                                    <button type="button" id="boton-borrar-com">Borrar comentario</button>
+                                {% endif %}
                             </li>
                         {% endfor %}
-                    {% endif %} -->
+                    {% endif %}
                 </ul>
             </section>
 

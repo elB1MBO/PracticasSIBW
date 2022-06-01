@@ -1,0 +1,128 @@
+<html>
+<head>
+    <!--Página de login-->
+    <link rel="stylesheet" href="static/css/editarUsuario.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="back">
+            <a href="gestionUsuarios.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+        </div>
+
+        <img id="logo" src="static/image/logo nombre hor.png">
+    </div>
+
+    <div class="info-users" id="div-info-users">
+        <article>
+            <h1>Tipos de usuarios</h1>
+            <p><span class="critical-words">Normal:</span> Podrá incluir comentarios en cada producto del sitio y cambiar sus 
+                datos de usuario.</p>
+            <p><span class="critical-words">Moderador:</span> Podrá editar / borrar comentarios.</p>
+            <p><span class="critical-words">Gestor:</span> Podrá editar / borrar / añadir productos y etiquetas a los productos</p>
+            <p><span class="critical-words">Superusuario:</span> Podrá realizar cualquier acción, incluyendo modificar los roles
+                de los usuarios.
+            </p>
+        </article>
+    </div>
+
+    <!--Ventana de edicion del id-->
+    <div class="fondo-cambiar-id" id="container-editar-id">
+        <div class="caja-cambiar-id" id="caja-nuevo-id">
+            <h3>Introduce su nuevo ID:</h3>
+            <form action="editarUsuario.php" method="post" class="form-popup">
+                <input name="nuevoId" type="text" id="new-id" class="input-field" placeholder="{{usuario['user_id']}}"><br>
+                <button type="submit" value="cambiar" class="change-id-button" id="boton-cambiar-id">Cambiar ID</button>
+                <button type="reset" value="cancelar" id="boton-cancelar-id">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    <!--Ventana de edicion del nombre-->
+    <div class="fondo-cambiar-nombre" id="container-editar-nombre">
+        <div class="caja-cambiar-nombre" id="caja-nuevo-nombre">
+            <h3>Introduce su nuevo nombre:</h3>
+            <form action="editarUsuario.php" method="post" class="form-popup">
+                <input name="nuevoNombre" type="text" id="new-username" class="input-field" placeholder="{{usuario['username']}}"><br>
+                <button type="submit" value="cambiar" class="change-name-button" id="boton-cambiar-nombre">Cambiar nombre</button>
+                <button type="reset" value="cancelar" id="boton-cancelar-nombre">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    <!--Ventana de edicion del email-->
+    <div class="fondo-cambiar-email" id="container-editar-email">
+        <div class="caja-cambiar-email" id="caja-nuevo-email">
+            <h3>Introduce su nuevo email:</h3>
+            <form action="editarUsuario.php" method="post" class="form-popup">
+                <input name="nuevoEmail" type="text" id="new-email" class="input-field" placeholder="{{usuario['email']}}"><br>
+                <button type="submit" value="cambiar" class="change-email-button" id="boton-cambiar-email">Cambiar email</button>
+                <button type="reset" value="cancelar" id="boton-cancelar-email">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    <!--Ventana de edicion de la contraseña-->
+    <!-- <div class="fondo-cambiar-pass" id="container-editar-pass">
+        <div class="caja-cambiar-pass" id="caja-nuevo-pass">
+            <h3>Introduce su nueva contraseña:</h3>
+            <form action="editarUsuario.php" method="post" class="form-popup">
+                <input name="nuevaPass" type="text" id="new-pass" class="input-field" placeholder="{{ password }}"><br>
+                <button type="submit" value="cambiar" class="change-pass-button" id="boton-cambiar-pass">Cambiar contraseña</button>
+                <button type="reset" value="cancelar" id="boton-cancelar-pass">Cancelar</button>
+            </form>
+        </div>
+    </div> -->
+    <!--Ventana de edicion del tipo-->
+    <div class="fondo-cambiar-tipo" id="container-editar-tipo">
+        <div class="caja-cambiar-tipo" id="caja-nuevo-tipo">
+            <h3>Introduce su nuevo tipo:</h3>
+            <form action="editarUsuario.php" method="post" class="form-popup">
+                <input name="nuevotipo" type="text" id="new-tipo" class="input-field" placeholder="{{usuario['tipo']}}"><br>
+                <button type="submit" value="cambiar" class="change-tipo-button" id="boton-cambiar-tipo">Cambiar tipo</button>
+                <button type="reset" value="cancelar" id="boton-cancelar-tipo">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container-principal">
+        <img id="foto-perfil" src="static/image/profile/pan de molde.jpg">
+
+        <div class="personal-data">
+            <label class="data-label">ID Usuario: {{ usuario['user_id'] }}
+                <span id="edit-id"><i class="fa-solid fa-pencil" id="lapiz"></i></span>
+            </label><br/>
+            <label class="data-label">Nombre de usuario: {{ usuario['username'] }} 
+                <span id="edit-nombre"><i class="fa-solid fa-pencil" id="lapiz"></i></span>
+            </label><br/>
+            <label class="data-label">Email: {{ usuario['email'] }}
+                <span id="edit-email"><i class="fa-solid fa-pencil" id="lapiz"></i></span>
+            </label><br/>
+            <!-- <label class="data-label">Contraseña: {{ password }}
+                <span id="edit-pass"><i class="fa-solid fa-pencil" id="lapiz"></i></span>
+            </label><br/> -->
+            <label class="data-label">Permisos de usuario: {{ usuario['tipo'] }}
+                <span id="edit-tipo"><i class="fa-solid fa-pencil" id="lapiz"></i></span>
+            <!-- <span class="icono" id="icono-info"><i class="fa-solid fa-circle-question"></i></span> -->
+            </label><br/>
+        </div>
+
+        <button type="button" class="logout-button" id="logout"><a href="deleteUser.php">Eliminar Usuario</a></button>
+        
+    </div>
+
+    <div class="container-principal2">
+        <img id="foto-perfil" src="static/image/profile/pan de molde.jpg">
+        <div class="personal-data">
+            <form class="formulario" id="user-form" method="post" action="gestionarUsuario.php?id={{usuario['user_id']}}">
+                <p>Nombre de usuario:</p><input name="name" type="text" id="username" class="input-field" placeholder="{{usuario['username']}}">
+                <p>Tipo de usuario:</p><input name="tipo" type="text" id="tipo" class="input-field" placeholder="{{usuario['tipo']}}">
+                <span class="icono" id="icono-info"><i class="fa-solid fa-circle-question"></i></span><br/>
+                <button type="submit" class="logout-button" id="logout">Editar Usuario</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="static/js/editarUsuario.js"></script>
+    <script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

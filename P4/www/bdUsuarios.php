@@ -30,9 +30,9 @@
             //$sql = "INSERT INTO `usuarios` (`user_id`, `password`, `email`, `tipo`, `username`) VALUES ($nombre, $pass_hash, $email, $tipo, $nombre) ";
         }
 
-        function getUsuario($nombre){
+        function getUsuario($id){
             $stmt = $this->mysqli->prepare("SELECT * from usuarios where user_id=?");
-            $stmt->bind_param("s", $nombre);
+            $stmt->bind_param("s", $id);
             $stmt->execute();
 
             $res = $stmt->get_result();
@@ -43,9 +43,9 @@
             return $usuario;
         }
 
-        function getPassword($username){
+        function getPassword($id){
             $usuario = array();
-            $usuario = $this->getUsuario($username);
+            $usuario = $this->getUsuario($id);
             return $usuario["password"];
         }
 
@@ -88,6 +88,18 @@
                 $stmt->execute();
             }
             return true;
+        }
+        
+        //Devuelve el numero de superusuarios del sistema
+        function numSuperUsuarios(){
+            $usuarios = $this->getUsuarios();
+            $numSuper = 0;
+            for ($i=0; $i < count($usuarios); $i++) { 
+                if($usuarios[$i]["tipo"] === "super"){
+                    $numSuper++;
+                }
+            }
+            return $numSuper;
         }
 
         //Devuelve todos los usuarios de la tabla

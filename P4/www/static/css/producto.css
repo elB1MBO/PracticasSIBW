@@ -320,6 +320,13 @@ input[type=checkbox]:checked + aside {
     cursor: pointer;
 }
 
+#boton-editar, #boton-borrar-com{
+    cursor: pointer;
+    color: black;
+    width: 20%;
+    margin-bottom: 5%;
+}
+
 /*Pie de pagina*/
 footer{
     font-size: large;

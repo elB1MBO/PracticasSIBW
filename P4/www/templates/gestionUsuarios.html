@@ -15,7 +15,21 @@
         </div>
         <h1>Gestionar Usuarios</h1>
         <h2>Superusuario: {{usuario['username']}}</h2>
-        <i id="edit-icon" class="fa-solid fa-pen-to-square"></i>
+        
+        <div class="container-edicion" id="edit-cont">
+            <div class="form-container">
+                <h2>Editar usuario </h2>
+                <form action="editarUsuario" method="post" id="form-user">
+                    <input type="text" name="user_id" id="edit-id-input" placeholder="user['user_id']"><br>
+                    <input type="text" name="username" id="edit-name-input" placeholder="user['username']"><br>
+                    <input type="text" name="email" id="edit-email-input" placeholder="user['email']"><br>
+                    <input type="text" name="tipo" id="edit-tipo-input" placeholder="user['tipo']"><br>
+                    <button type="submit" value="cambiar" class="change-button" id="boton-cambiar-email">Cambiar usuario</button>
+                    <button type="reset" value="cancelar" id="boton-cancelar">Cancelar</button>
+                </form>
+            </div>
+        </div>
+
         <div class="container-usuarios">
             <h3>Tabla de Usuarios:</h3>
             <table id="usuarios">
@@ -30,12 +44,12 @@
                 </thead>
                 <tbody>
                     {% for i, user in usuarios %}
-                        <tr id="{{user['user_id']}}">
+                        <tr id="user_id{{i}}">
                             <td>{{user['user_id']}}</td>
                             <td>{{user['username']}}</td>
                             <td>{{user['email']}}</td>
                             <td>{{user['tipo']}}</td>
-                            <td><i id="edit-icon{{i}}" class="fa-solid fa-pen-to-square"></i></td>
+                            <td><a href="gestionarUsuario.php?id={{user['user_id']}}"><i id="edit-icon{{i}}" class="fa-solid fa-pen-to-square"></i></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

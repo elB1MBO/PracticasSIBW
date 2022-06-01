@@ -22,10 +22,16 @@
     if($_SERVER['REQUEST_METHOD'] === "POST"){
         $id = $usuario['user_id'];
         $nuevoNombre = $_POST['nuevoNombre'];
+        $nuevoEmail = $_POST['nuevoEmail'];
         if($nuevoNombre != null){
             if($bdUs->getUsuario($_SESSION["nombreUsuario"] != null)){
                 $bdUs->cambiarNombre($id, $nuevoNombre);
                 $_SESSION['nombreUsuario'] = $nuevoNombre;
+            }
+        }
+        if($nuevoEmail != null){
+            if($bdUs->getUsuario($_SESSION["nombreUsuario"] != null)){
+                $bdUs->cambiarEmail($id, $nuevoEmail);
             }
         }
         header("Location: perfil.php", true);

@@ -107,9 +107,10 @@
             //echo json_encode($palabrotas);
         }
 
-        //Para obtener todos los comentarios de la tabla
-        function getComentarios(){
-            $stmt = $this->mysqli->prepare("SELECT * FROM comentarios");
+        //Para obtener todos los comentarios del producto
+        function getComentarios($idPr){
+            $stmt = $this->mysqli->prepare("SELECT * FROM comentarios WHERE id_producto=?");
+            $stmt->bind_param("s", $idPr);
             $stmt->execute();
 
             $result = $stmt->get_result();
