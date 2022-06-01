@@ -13,8 +13,8 @@
             </div> -->
             <img id="logo" src="static/image/logo nombre hor.png">
         </div>
-        <h1>Gestionar Usuarios</h1>
-        <h2>Superusuario: {{usuario['username']}}</h2>
+        <h1>Gestionar Comentarios</h1>
+        <h2>Moderador: {{usuario['username']}}</h2>
         
         <div class="container-edicion" id="edit-cont">
             <div class="form-container">
@@ -31,25 +31,28 @@
         </div>
 
         <div class="container-usuarios">
-            <h3>Tabla de Usuarios:</h3>
+            <h3>Tabla de Comentarios:</h3>
             <table id="usuarios">
                 <thead>
                     <tr>
-                        <th>ID usuario</th>
+                        <th>ID Comentario</th>
                         <th>Nombre usuario</th>
                         <th>Email</th>
-                        <th>Tipo</th>
-                        <th>Editar</th>
+                        <th>Fecha</th>
+                        <th>Comentario</th>
+                        <th>ID Producto</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i, user in usuarios %}
+                    {% for i, comment in comentarios %}
                         <tr id="user_id{{i}}">
-                            <td>{{user['user_id']}}</td>
-                            <td>{{user['username']}}</td>
-                            <td>{{user['email']}}</td>
-                            <td>{{user['tipo']}}</td>
-                            <td><a href="gestionarUsuario.php?id={{user['user_id']}}"><i id="edit-icon{{i}}" class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td>{{comment['id']}}</td>
+                            <td>{{comment['nombre']}}</td>
+                            <td>{{comment['email']}}</td>
+                            <td>{{comment['fecha']}}</td>
+                            <td>{{comment['comentario']}}</td>
+                            <td>{{comment['id_producto']}}</td>
+                            <td><a href="editarComentario.php?id={{comment['id']}}"><i id="edit-icon{{i}}" class="fa-solid fa-pen-to-square"></i></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

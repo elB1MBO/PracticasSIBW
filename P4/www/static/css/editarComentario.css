@@ -1,0 +1,161 @@
+/*Pagina del perfil del usuario*/
+/*Fuente de google para texto*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/*Fuente para titulo*/
+@font-face {
+    font-family: Cremona;
+    src: url(../font/Cremona\ Regular\ TTF.ttf);
+}
+/*para que sea responsive*/
+@media screen and (max-width:800px) {
+    footer{
+        width: 100%;
+        grid-template-columns: repeat((1,1fr));
+        grid-gap: 1px;
+    }
+}
+
+*{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    margin-left: 0%;
+    background-image: linear-gradient(rgba(71, 67, 57, 0.4),rgba(165, 146, 117, 0.4)),
+    url(https://ep01.epimg.net/politica/imagenes/2017/11/13/diario_de_espana/1510567236_342790_1510567390_noticia_normal.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.header{
+    height: 20%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#logo{
+    max-width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-right: 41%;
+    object-fit: cover;
+}
+
+.back{
+    width: 8%;
+    height: 8%;
+    margin-top: 2%;
+    margin-right: 0;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    text-align: center;
+    align-items: center;
+    font-size: 50px;
+    color: rgba(245, 245, 220, 1);
+    border: 0;
+}
+.back a{
+    margin-bottom: 1%;
+}
+.back i{
+    margin-bottom: 1%;
+    color: rgb(245, 245, 220);
+}
+
+.container-principal{
+    margin: 1% auto;
+    width: 30%;
+    height: 70%;
+    position: relative;
+    background-color: rgba(245, 245, 220, 0.85);
+    border-radius: 20px;
+    padding: 3%;
+    overflow: hidden;
+    display: none;
+}
+
+.container-principal2{
+    margin: 1% auto;
+    width: 30%;
+    height: 70%;
+    position: relative;
+    background-color: rgba(245, 245, 220, 0.85);
+    border-radius: 20px;
+    padding: 3%;
+    overflow: hidden;
+    display: block;
+}
+
+
+#foto-perfil{
+    width: 70%;
+    height: 40%;
+    position: relative;
+    clip-path: circle();
+    left: 15%;
+}
+
+.personal-data{
+    position: relative;
+    margin: 10% auto;
+}
+
+label{
+    margin: 5% auto;
+}
+
+.info-users{
+    height: 20%;
+    width: 20%;
+    display: none;
+    position: absolute; /* IMPORTANTE: si este es relative, podemos hacer al otro absolute y ponerlo donde queramos */
+    left: 60%;
+    top: 30%;
+}
+
+article{
+    width: 100%;
+    background: white;
+    padding: 5%;
+    border-radius: 30px;
+    text-align: justify;
+    position: absolute; /* Al ser el padre relative, este es absoluto respecto a él */
+    font-size: smaller;
+    z-index: 1; /* Propiedad que sirve para superponerlo */
+    left: 0%;
+    display: inline;
+    overflow: visible;
+}
+
+textarea{
+    width: 60%;
+    max-width: 80%;
+    min-width: 50%;
+    height: 25%;
+    max-height: 30%;
+    min-height: 10%;
+}
+
+.edit-button{
+    width: 65%;
+    height: 13%;
+    padding: auto;
+    cursor: pointer;
+    display: block;
+    margin: 6% auto;
+    border: 0;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgb(196, 115, 115), rgb(184, 53, 53));
+    font-size: large;
+}
+
+

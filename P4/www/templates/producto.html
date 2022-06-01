@@ -47,7 +47,7 @@
                                 <hr>
                                 <p>{{comment.comentario}}</p>
                                 {% if usuario.tipo == "moderador" %}
-                                    <button type="button" id="boton-editar">Editar comentario</button>
+                                    <button type="button" value="editar" id="boton-editar">Editar comentario</button>
                                     <button type="button" id="boton-borrar-com">Borrar comentario</button>
                                 {% endif %}
                             </li>
@@ -57,6 +57,17 @@
             </section>
 
         </section>
+
+        <div class="container-edit-com" id="container-caja-com">
+           <div class="caja-cambiar-comentario" id="caja-cambiar-comentario">
+               <form method="post" action="editarComentario.php">
+                   <h3>Editar comentario</h3>
+                   <textarea name="comentario" type="text" id="new-comment" class="input-nuevo-com" placeholder="{{comment.comentario}}"></textarea><br>
+                   <button type="submit" value="cambiar" class="change-com-button" id="boton-cambiar-com">Cambiar comentario</button>
+                   <button type="reset" value="cancelar" id="boton-cancelar-com">Cancelar</button>
+               </form>
+           </div>
+        </div>
 
         <section class="imagenes">
             <div class="galeria">

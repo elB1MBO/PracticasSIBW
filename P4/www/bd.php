@@ -72,26 +72,20 @@
             return $imagenes;
         }
 
-        function getComment($idPr){
-            //Recibimos por POST los datos procedentes del formulario
-            $nombre = $_GET["name"];
-            $email = $_GET["email"];
-            $fecha = $_GET["fecha"];
-            $comentario = $_GET["comentario"];
-    
-            $stmt = $this->mysqli->prepare("SELECT * FROM comentarios WHERE id_producto= ? ORDER BY id");
-            $stmt->bind_param("s", $idPr);
+        function getComment($id){    
+            $stmt = $this->mysqli->prepare("SELECT * FROM comentarios WHERE id= ?");
+            $stmt->bind_param("s", $id);
             $stmt->execute();
     
-            $comentarios = array();
-            while($row = $stmt->get_result()){
-                $comentarios[] = $row;
+            $comentarios = $stmt->get_result();
+            if ($comentarios->num_rows>0){
+                $row = $comentarios->fetch_assoc();
+    
+                $comentario = array('id' => $row['id'], 'nombre' => $row['nombre'], 'email' => $row['email'], 
+                'fecha' => $row['fecha'], 'comentario' => $row['comentario'], 'id_producto' => $row['id_producto']);
             }
     
-            return $comentarios;
-            //echo json_encode($datos);
-    
-            //Cerramos conexion con la base de datos
+            return $comentario;
         }
 
         function getBadWords(){
@@ -124,6 +118,22 @@
             return $comentarios;
         }
 
+        //Devuelve todos los comentarios
+        function getAllComentarios(){
+            $tabla_comentarios = $this->mysqli->query("SELECT * FROM comentarios");
+            $comentarios = array();
+
+            while($comentario = $tabla_comentarios->fetch_assoc()){
+                $comentarios[] = $comentario;
+            }
+            return $comentarios;
+        }
+
+        function cambiarComentario($id, $nuevoComentario){
+            $stmt = $this->mysqli->prepare("UPDATE comentarios SET comentario=? WHERE id=?");
+            $stmt->bind_param("ss", $nuevoComentario, $id);
+            $stmt->execute();
+        }
 
         //Hay que añadir funciones para editar todos los campos que se dicen
 

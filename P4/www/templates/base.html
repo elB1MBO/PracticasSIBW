@@ -55,6 +55,10 @@
                 {% if usuario.tipo == "super" %}
                 <p><a href="gestionUsuarios.php">Gestionar Usuarios</a></p>
                 {% endif %}
+                {% if usuario.tipo == "moderador" %}
+                <p><a href="gestionComentarios.php">Gestionar Comentarios</a></p>
+                {% endif %}
+
                 <p><a href="logout.php">Cerrar sesión</a></p>
             {% endif %}
             {% block user %}

@@ -1,0 +1,34 @@
+<html>
+<head>
+    <!--Página de login-->
+    <link rel="stylesheet" href="static/css/editarComentario.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="back">
+            <a href="gestionComentarios.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+        </div>
+
+        <img id="logo" src="static/image/logo nombre hor.png">
+    </div>
+
+    <div class="container-principal2">
+        <h2>Usuario: {{ comentario['nombre'] }}</h2>
+        <p>Email: {{ comentario['email'] }}</p>
+        <p>Fecha: {{ comentario['fecha'] }}</p>
+        <p>ID Producto: {{ comentario['id_producto'] }}</p>
+        <div class="personal-data">
+            <form class="formulario" id="user-form" method="post" action="gestionarUsuario.php?id={{usuario['user_id']}}">
+                <p>Comentario:</p><textarea name="name" type="text" id="username" class="input-field" placeholder="{{usuario['username']}}"></textarea>
+                <button type="submit" class="edit-button" id="edit">Editar Comentario</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src="static/js/editarUsuario.js"></script> -->
+    <script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
