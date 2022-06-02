@@ -20,7 +20,7 @@
             <section id="container-comentarios">
                 <!--Si el usuario es un usuario anónimo, no podrá ver el formulario para escribir un comentario-->
                 {% if usuario %}
-                    <form> <!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
+                    <form method="post" action="subirComentario.php"> <!--Form se usa para secciones de documento con controles interactivos que permiten a un usuario enviar info al servidor-->
                         <div class="container-name">
                             <label>Nombre:</label><br>
                             <input class="name-input" type="text" id="name">
@@ -45,10 +45,10 @@
                                 <label>{{comment.email}}</label><br>
                                 <label>{{comment.fecha}}</label><br>
                                 <hr>
-                                <p>{{comment.comentario}}</p>
+                                <p>{{comment.comentario | raw}}</p>
                                 {% if usuario.tipo == "moderador" %}
-                                    <button type="button" value="editar" id="boton-editar">Editar comentario</button>
-                                    <button type="button" id="boton-borrar-com">Borrar comentario</button>
+                                    <button type="button" value="editar" id="boton-editar"><a href="editarComentario.php?id={{comment['id']}}">Editar comentario</a></button>
+                                    <button type="button" id="boton-borrar-com"><a href="borrarComentario.php?id={{comment['id']}}">Borrar comentario</a></button>
                                 {% endif %}
                             </li>
                         {% endfor %}
@@ -57,17 +57,6 @@
             </section>
 
         </section>
-
-        <div class="container-edit-com" id="container-caja-com">
-           <div class="caja-cambiar-comentario" id="caja-cambiar-comentario">
-               <form method="post" action="editarComentario.php">
-                   <h3>Editar comentario</h3>
-                   <textarea name="comentario" type="text" id="new-comment" class="input-nuevo-com" placeholder="{{comment.comentario}}"></textarea><br>
-                   <button type="submit" value="cambiar" class="change-com-button" id="boton-cambiar-com">Cambiar comentario</button>
-                   <button type="reset" value="cancelar" id="boton-cancelar-com">Cancelar</button>
-               </form>
-           </div>
-        </div>
 
         <section class="imagenes">
             <div class="galeria">

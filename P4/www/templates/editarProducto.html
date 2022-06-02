@@ -1,0 +1,31 @@
+<html>
+<head>
+    <!--Página de login-->
+    <link rel="stylesheet" href="static/css/editarProducto.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="back">
+            <a href="gestionProductos.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+        </div>
+
+        <img id="logo" src="static/image/logo nombre hor.png">
+    </div>
+
+    <div class="container-principal">
+        <form class="formulario" id="user-form" method="post" action="editarProducto.php?id={{producto['id']}}">
+            <p>Nombre producto:</p><input name="nombre" type="text" id="nombre" class="input-field" placeholder="{{producto['nombre']}}"></input>
+            <p>Precio:</p><input name="precio" type="text" id="precio" class="input-field" placeholder="{{producto['precio']}}"></input>
+            <p>Descripción:</p><textarea name="descripcion" type="text" id="descripcion" class="input-field" placeholder="{{producto['descripcion']}}"></textarea>
+            <p>Etiqueta:</p><input name="etiqueta" type="text" id="etiqueta" class="input-field" placeholder="{{producto['etiqueta']}}"></input>
+            <button type="submit" class="edit-button" id="edit">Editar Producto</button>
+        </form>
+    </div>
+
+    <!-- <script src="static/js/editarUsuario.js"></script> -->
+    <script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

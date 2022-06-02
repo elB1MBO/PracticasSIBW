@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <!--Pagina de gestion de usuarios-->
+        <link rel="stylesheet" href="static/css/paginaGestion.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="back">
+                <a href="index.php"><i class="fa-solid fa-arrow-left-long"></i></a>
+            </div>
+            <!-- <div class="container-logo">
+                <a href="index.php" alt="Logo"><img id="logo" src="static/image/logo nombre hor.png"></a>
+            </div> -->
+            <img id="logo" src="static/image/logo nombre hor.png">
+        </div>
+        
+        <h1>Gestionar Productos</h1>
+        <h2>Gestor: {{usuario['username']}}</h2>
+        <button type="button" id="crear-prod"><a href="editarProducto.php"><i class="fa-solid fa-circle-plus fa-3x" id="simbolo-suma"></i></a></button>
+        <div class="container-usuarios">
+            <h3>Tabla de Productos:</h3>
+            <table id="usuarios">
+                <thead>
+                    <tr>
+                        <th>ID Producto</th>
+                        <th>Nombre producto</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                        <th>Etiqueta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i, producto in productos %}
+                        <tr id="user_id{{i}}">
+                            <td>{{producto['id']}}</td>
+                            <td>{{producto['nombre']}}</td>
+                            <td>{{producto['precio']}}</td>
+                            <td>{{producto['descripcion'] | raw}}</td>
+                            <td>{{producto['etiqueta']}}</td>
+                            <td><a href="editarProducto.php?id={{producto['id']}}"><i id="edit-icon{{i}}" class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td><a href="borrarProducto.php?id={{producto['id']}}"><i class="fa-solid fa-trash-can"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <script src="static/js/gestionUsuarios.js"></script>
+    <script src="https://kit.fontawesome.com/320f33400a.js" crossorigin="anonymous"></script>
+</html>

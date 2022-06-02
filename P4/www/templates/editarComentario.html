@@ -14,14 +14,14 @@
         <img id="logo" src="static/image/logo nombre hor.png">
     </div>
 
-    <div class="container-principal2">
+    <div class="container-principal">
         <h2>Usuario: {{ comentario['nombre'] }}</h2>
         <p>Email: {{ comentario['email'] }}</p>
         <p>Fecha: {{ comentario['fecha'] }}</p>
         <p>ID Producto: {{ comentario['id_producto'] }}</p>
-        <div class="personal-data">
-            <form class="formulario" id="user-form" method="post" action="gestionarUsuario.php?id={{usuario['user_id']}}">
-                <p>Comentario:</p><textarea name="name" type="text" id="username" class="input-field" placeholder="{{usuario['username']}}"></textarea>
+        <div class="comment-data">
+            <form class="formulario" id="user-form" method="post" action="editarComentario.php?id={{comentario['id']}}">
+                <p>Comentario:</p><textarea name="comentario" type="text" id="comentario" class="input-field" placeholder="{{comentario['comentario']}}"></textarea>
                 <button type="submit" class="edit-button" id="edit">Editar Comentario</button>
             </form>
         </div>

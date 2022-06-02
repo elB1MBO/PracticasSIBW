@@ -58,6 +58,9 @@
                 {% if usuario.tipo == "moderador" %}
                 <p><a href="gestionComentarios.php">Gestionar Comentarios</a></p>
                 {% endif %}
+                {% if usuario.tipo == "gestor" %}
+                <p><a href="gestionProductos.php">Gestionar Productos</a></p>
+                {% endif %}
 
                 <p><a href="logout.php">Cerrar sesión</a></p>
             {% endif %}

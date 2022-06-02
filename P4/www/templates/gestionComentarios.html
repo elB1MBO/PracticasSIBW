@@ -1,7 +1,7 @@
 <html>
     <head>
         <!--Pagina de gestion de usuarios-->
-        <link rel="stylesheet" href="static/css/gestionUsuarios.css">
+        <link rel="stylesheet" href="static/css/paginaGestion.css">
     </head>
     <body>
         <div class="header">
@@ -50,9 +50,10 @@
                             <td>{{comment['nombre']}}</td>
                             <td>{{comment['email']}}</td>
                             <td>{{comment['fecha']}}</td>
-                            <td>{{comment['comentario']}}</td>
+                            <td>{{comment['comentario'] | raw}}</td>
                             <td>{{comment['id_producto']}}</td>
                             <td><a href="editarComentario.php?id={{comment['id']}}"><i id="edit-icon{{i}}" class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td><a href="borrarComentario.php?id={{comment['id']}}"><i class="fa-solid fa-trash-can"></i></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

@@ -22,6 +22,8 @@
     //Si el usuario desea cambiar el comentario
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $nuevoComentario = $_POST['comentario'];
+        //Añado el mensaje de que el comentario ha sido editado por un usuario moderador
+        $nuevoComentario .= "<br><i id='mensajeEdicion'>Mensaje editado por ".$_SESSION["nombreUsuario"]."</i>";
         if($nuevoComentario != null){
             $bd->cambiarComentario($idCom, $nuevoComentario);
         }

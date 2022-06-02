@@ -79,6 +79,7 @@ body{
     background-color: rgba(245, 245, 220, 0.85);
     border-radius: 20px;
     padding: 3%;
+    padding-top: 1%;
     overflow: hidden;
     display: block;
 }
@@ -91,10 +92,10 @@ body{
 
 textarea{
     width: 60%;
-    max-width: 80%;
+    max-width: 100%;
     min-width: 50%;
     height: 25%;
-    max-height: 30%;
+    max-height: 25%;
     min-height: 10%;
 }
 

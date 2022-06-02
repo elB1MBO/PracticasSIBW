@@ -368,6 +368,10 @@ input[type=checkbox]:checked + aside {
     margin-bottom: 2%;
 }
 
+#mensajeEdicion{
+    color: black;
+}
+
 /*Pie de pagina*/
 footer{
     font-size: large;
