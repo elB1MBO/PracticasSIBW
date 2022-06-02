@@ -41,17 +41,15 @@
             $nuevaEtiqueta = $producto['etiqueta'];
         }
 
-        alert_message("ID: ".$idPr);
-
+        //Si el id no existe, significa que quiere crear un producto nuevo
         if($idPr === -1){
             $bd->crearProducto($nuevoNombre, $nuevoPrecio, $nuevaDescripcion, $nuevaEtiqueta);
         } else {
             $bd->editarProducto($idPr, $nuevoNombre, $nuevoPrecio, $nuevaDescripcion, $nuevaEtiqueta);
         }
-        $producto = $bd->getProducto($idPr);
 
-        /* header("Location: gestionProductos.php", true);
-        exit(); */
+        header("Location: gestionProductos.php", true);
+        exit();
     }
 
     echo $twig->render('editarProducto.html', ['producto' => $producto]);
