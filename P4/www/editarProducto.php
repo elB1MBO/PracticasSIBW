@@ -27,6 +27,9 @@
         $nuevaDescripcion = $_POST['descripcion'];
         $nuevaEtiqueta = $_POST['etiqueta'];
 
+        $imagen = $_POST['imagen'];
+        $imagen_marca = $_POST['imagen_marca'];
+
         //si algun campo es nulo, lo guarda con su valor anterior
         if($nuevoNombre == null){
             $nuevoNombre = $producto['nombre'];
@@ -43,7 +46,7 @@
 
         //Si el id no existe, significa que quiere crear un producto nuevo
         if($idPr === -1){
-            $bd->crearProducto($nuevoNombre, $nuevoPrecio, $nuevaDescripcion, $nuevaEtiqueta);
+            $bd->subirProducto($nuevoNombre, $nuevoPrecio, $nuevaDescripcion, $nuevaEtiqueta, $imagen, $imagen_marca);
         } else {
             $bd->editarProducto($idPr, $nuevoNombre, $nuevoPrecio, $nuevaDescripcion, $nuevaEtiqueta);
         }

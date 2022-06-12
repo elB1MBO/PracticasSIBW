@@ -89,13 +89,16 @@ body{
     margin: 10% auto;
 }
 
+p{
+    margin: 2% 1%;
+}
 
 textarea{
     width: 60%;
     max-width: 100%;
     min-width: 50%;
-    height: 25%;
-    max-height: 25%;
+    height: 12.5%;
+    max-height: 15%;
     min-height: 10%;
 }
 

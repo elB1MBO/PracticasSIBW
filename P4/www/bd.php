@@ -45,7 +45,7 @@
             return $productos;
         }
 
-        function subirProducto($nombre, $precio, $desc, $etiqueta, $imagen, $iamgen_m){
+        function subirProducto($nombre, $precio, $desc, $etiqueta, $imagen, $imagen_m){
             $stmt = $this->mysqli->prepare("INSERT INTO productos ('nombre', 'precio', 'descripcion', 'etiqueta') VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $nombre, $precio, $desc, $etiqueta);
             $stmt->execute();

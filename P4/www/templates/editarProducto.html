@@ -15,11 +15,13 @@
     </div>
 
     <div class="container-principal">
-        <form class="formulario" id="user-form" method="post" action="editarProducto.php?id={{producto['id']}}">
+        <form class="formulario" id="user-form" method="post" action="editarProducto.php?id={{producto['id']}}" enctype="multipart/form-data">
             <p>Nombre producto:</p><input name="nombre" type="text" id="nombre" class="input-field" placeholder="{{producto['nombre']}}"></input>
             <p>Precio:</p><input name="precio" type="text" id="precio" class="input-field" placeholder="{{producto['precio']}}"></input>
             <p>Descripción:</p><textarea name="descripcion" type="text" id="descripcion" class="input-field" placeholder="{{producto['descripcion']}}"></textarea>
             <p>Etiqueta:</p><input name="etiqueta" type="text" id="etiqueta" class="input-field" placeholder="{{producto['etiqueta']}}"></input>
+            <p>Imagen principal:</p><input type="file" name="imagen"/>
+            <p>Imagen secundaria:</p><input type="file" name="imagen_marca"/>
             <button type="submit" class="edit-button" id="edit">Editar Producto</button>
         </form>
     </div>
